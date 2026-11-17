@@ -1,0 +1,1258 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0001",
+   "tz": "Pacific/Apia",
+   "now": 424258490073,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0051-07T06:11:52,19+01"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-2,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":true,\"parsedDateParts\":[],\"era\":null,\"meridiem\":null,\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":null}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0002",
+   "tz": "America/Sao_Paulo",
+   "now": 1274330259314,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       "\n1910-02-20"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-1889136000000,0,true,\"en\"]}}",
+   "{\"out\":\"1910-02-20T00:00:00Z\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0003",
+   "tz": "UTC",
+   "now": 1371424309161,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-W03"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62165836800000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"0000-01-17T00:00:00+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Kathmandu",
+   "now": 1908915307869,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "1985-13-31　"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-2,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":null,\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":null}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0005",
+   "tz": "Europe/London",
+   "now": 1297461755147,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-024T00:00:00,10426"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "creationData",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62165231924896,-1,false,\"en\"]}}",
+   "{\"out\":\"0000-01-24T00:00:00-00:01\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":true,\"parsedDateParts\":[0,{\"$undefined\":true},{\"$undefined\":true},0,0,0,104],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":-1}",
+   "{\"out\":{\"input\":\"0000-024T00:00:00,10426\",\"format\":\"YYYY-DDDTHH:mm:ss,SSSS\",\"locale\":{\"$locale\":\"en\"},\"isUTC\":false,\"strict\":{\"$undefined\":true}}}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0006",
+   "tz": "Asia/Amman",
+   "now": 1140118626844,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       "  0000-01-01T00:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62167219200000,0,true,\"en\"]}}",
+   "{\"out\":\"0000-01-01T00:00:00Z\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\"  \"],\"overflow\":-1,\"charsLeftOver\":2,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":true,\"parsedDateParts\":[0,0,1,0,0],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0007",
+   "tz": "Europe/London",
+   "now": 376896066466,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "Date(2320767080)"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[2324367080,0,true,\"en\"]}}",
+   "{\"out\":\"1970-01-27T21:39:27Z\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-2,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":null,\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":-2}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0009",
+   "tz": "Pacific/Apia",
+   "now": 1846071957145,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "/Date(988123039017)/"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "creationData",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "utc",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[988123039017,-660,false,\"en\"]}}",
+   "{\"out\":\"2001-04-24T03:37:19-11:00\"}",
+   "{\"out\":{\"input\":\"/Date(988123039017)/\",\"format\":{\"$undefined\":true},\"locale\":{\"$locale\":\"en\"},\"isUTC\":false,\"strict\":{\"$undefined\":true}}}",
+   "{\"out\":\"2001-04-24T14:37:19.017Z\"}",
+   "{\"out\":{\"$moment\":[988123039017,0,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0010",
+   "tz": "Pacific/Apia",
+   "now": 978223840357,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "Tue, (comment) 6 Aug 57 00:44 z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "creationData",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-391475760000,0,true,\"en\"]}}",
+   "{\"out\":\"1957-08-06T00:44:00Z\"}",
+   "{\"out\":{\"input\":\"Tue, (comment) 6 Aug 57 00:44 z\",\"format\":{\"$undefined\":true},\"locale\":{\"$locale\":\"en\"},\"isUTC\":true,\"strict\":{\"$undefined\":true}}}",
+   "{\"out\":\"1957-08-06T00:44:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0011",
+   "tz": "America/Sao_Paulo",
+   "now": 1586165373700,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "Date(667584033)"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "creationData",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "local",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[656784033,0,true,\"en\"]}}",
+   "{\"out\":\"1970-01-08T14:26:24Z\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-2,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":null,\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":-2}",
+   "{\"out\":{\"input\":\"Date(667584033)\",\"format\":{\"$undefined\":true},\"locale\":{\"$locale\":\"en\"},\"isUTC\":true,\"strict\":{\"$undefined\":true}}}",
+   "{\"out\":{\"$moment\":[656784033,-180,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0012",
+   "tz": "UTC",
+   "now": 1352617317568,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "Date(771122657)",
+       [
+        {
+         "$const": "moment.ISO_8601"
+        },
+        {
+         "$const": "moment.RFC_2822"
+        },
+        "YYYY"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "creationData",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "local",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[181168444800000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"7711-01-01T00:00:00+00:00\"}",
+   "{\"out\":{\"input\":\"Date(771122657)\",\"format\":\"YYYY\",\"locale\":{\"$locale\":\"en\"},\"isUTC\":false,\"strict\":{\"$undefined\":true}}}",
+   "{\"out\":{\"$moment\":[181168444800000,{\"$num\":\"-0\"},false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0013",
+   "tz": "Australia/Lord_Howe",
+   "now": 947564657840,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "Mon 16 Dec 1991 07:09:53 EST",
+       [
+        {
+         "$const": "moment.ISO_8601"
+        },
+        {
+         "$const": "moment.RFC_2822"
+        },
+        "YYYY"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[692885393000,660,false,\"en\"]}}",
+   "{\"out\":\"1991-12-16T23:09:53+11:00\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0015",
+   "tz": "Australia/Lord_Howe",
+   "now": 1183021773117,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       " 1983-W17T13:31:31.6751022+2400"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":-2}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0017",
+   "tz": "Pacific/Apia",
+   "now": 802533273497,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       "00000101T000000"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "creationData",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62167219200000,0,true,\"en\"]}}",
+   "{\"out\":\"0000-01-01T00:00:00Z\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":true,\"parsedDateParts\":[0,0,1,0,0,0],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":{\"input\":\"00000101T000000\",\"format\":\"YYYYMMDDTHHmmss\",\"locale\":{\"$locale\":\"en\"},\"isUTC\":true,\"strict\":{\"$undefined\":true}}}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0018",
+   "tz": "Asia/Kathmandu",
+   "now": 904631200183,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-02-01T00:00:00+14:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62164591200000,341,false,\"en\"]}}",
+   "{\"out\":\"0000-01-31T15:41:16+05:41\"}",
+   "{\"out\":\"0000-01-31T10:00:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0019",
+   "tz": "Asia/Amman",
+   "now": 1105565763933,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       "0000-01-01T00:00:00,837326372+01"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62167222799163,0,true,\"en\"]}}",
+   "{\"out\":\"-0001-12-31T23:00:00Z\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":true,\"parsedDateParts\":[0,0,1,0,0,0,837],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":-1}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0020",
+   "tz": "Pacific/Apia",
+   "now": 251194213748,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "+002020-09-26T24:49:21Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":3}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0021",
+   "tz": "Asia/Amman",
+   "now": 1441546083423,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "/Date(503572407644)/+0100",
+       {
+        "$const": "moment.RFC_2822"
+       },
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0022",
+   "tz": "Asia/Kathmandu",
+   "now": 739443978827,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1985-12-31 18:48:59",
+       [
+        {
+         "$const": "moment.ISO_8601"
+        },
+        {
+         "$const": "moment.RFC_2822"
+        },
+        "YYYY"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[504883139000,330,false,\"en\"]}}",
+   "{\"out\":\"1985-12-31T18:48:59+05:30\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":true,\"parsedDateParts\":[1985,11,31,18,48,59],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false,\"score\":0}}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0023",
+   "tz": "Pacific/Apia",
+   "now": 950981885634,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "/Date(815997114638)/+0100",
+       {
+        "$const": "moment.RFC_2822"
+       },
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-2,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":null,\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0024",
+   "tz": "Asia/Kathmandu",
+   "now": 1329464736117,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-W06 00",
+       [
+        {
+         "$const": "moment.ISO_8601"
+        },
+        {
+         "$const": "moment.RFC_2822"
+        },
+        "YYYY"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "invalidAt",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62167239676000,341,false,\"en\"]}}",
+   "{\"out\":\"0000-01-01T00:00:00+05:41\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\"-W06 00\"],\"overflow\":-1,\"charsLeftOver\":7,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[0],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false,\"score\":7}}",
+   "{\"out\":-1}"
+  ]
+ },
+ {
+  "id": "case-0025",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0025",
+   "tz": "America/Sao_Paulo",
+   "now": 142207648678,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "00000101 0000z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "local",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}"
+  ]
+ }
+]

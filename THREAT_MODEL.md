@@ -5,7 +5,7 @@ as the code that calls it. This document defines what Moment trusts and does not
 trust. A report is in scope only when Moment itself violates its documented
 behavior, or fails to maintain integrity, confidentiality, or availability under
 standard usage. Vulnerabilities that require compromising a trusted element,
-such as the JavaScript runtime, the host environment, or developer controlled
+such as the Go runtime, the host environment, or developer controlled
 input, are out of scope. Because Moment maintains process global state by
 design, reports that depend on an application routing untrusted input into that
 global state are treated as application responsibilities, and genuine internal
@@ -41,8 +41,8 @@ advisories.
 
 ## Elements Moment Trusts
 
-1. **The JavaScript runtime and its standard library.** Moment assumes a
-   correct, uncompromised runtime environment (Node.js, browser, or equivalent).
+1. **The Go runtime and its standard library.** Moment assumes a correct,
+   uncompromised runtime environment and time-zone database.
    Vulnerabilities in the runtime itself, and the language's own prototype chain
    semantics, are out of scope.
 
@@ -55,7 +55,7 @@ advisories.
    in, including not routing untrusted input into Moment's global state setters.
 
 4. **Installed package integrity.** Moment assumes the installed package (via
-   npm, a CDN, or similar) has not been tampered with and originates from the
+   the Go module proxy, a mirror, or similar) has not been tampered with and originates from the
    legitimate distribution channel.
 
 5. **The privileges and permissions of the execution context.** Moment inherits
@@ -153,18 +153,18 @@ installation context.
 ### Environmental Misconfiguration ([CWE-15](https://cwe.mitre.org/data/definitions/15.html))
 
 Issues arising from misconfigured execution environments, such as running
-outdated Node.js versions or insecure browser configurations, are not Moment
+outdated Go toolchains or insecure host configurations, are not Moment
 vulnerabilities.
 
 ### Vulnerabilities Requiring an End-of-Life Runtime
 
 Moment provides a stable API across many runtime versions. A vulnerability that
-only manifests on an end of life JavaScript runtime, or that requires a bug in
+only manifests on an end of life Go toolchain, or that requires a bug in
 the runtime itself, is out of scope.
 
 ### Supply Chain Compromise
 
-Tampering with Moment packages in the npm registry or as served from a CDN,
+Tampering with Moment modules in a module proxy or mirror,
 machine in the middle attacks during installation or delivery, a compromised or
 malicious CDN copy, or local file system manipulation are not vulnerabilities in
 Moment itself. Applications loading Moment from a CDN are responsible for

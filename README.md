@@ -1,13 +1,13 @@
 # [Moment.js](https://momentjs.com/)
 
-[![NPM version][npm-version-image]][npm-url]
-[![NPM downloads][npm-downloads-image]][npm-downloads-url]
+[![Go Reference][go-reference-image]][go-reference-url]
 [![MIT License][license-image]][license-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![FOSSA Status][fossa-badge-image]][fossa-badge-url]
 
-A JavaScript date library for parsing, validating, manipulating, and formatting
-dates.
+A date library for parsing, validating, manipulating, and formatting dates,
+written in Go. It reproduces Moment.js 2.31.0, including its 139 locales and the
+JavaScript `Date` behavior its results depend on.
 
 > ⚠️ Moment.js is a legacy project, now in **maintenance mode**. New features
 > are not being accepted. For more details, see the
@@ -28,11 +28,45 @@ is part of the [Linux Foundation](https://www.linuxfoundation.org/).
 
 ## Installation
 
-Install Moment.js using a package manager like npm, yarn, or bun.
-
 ```bash
-npm install moment
+go get github.com/moment/moment
 ```
+
+## Usage
+
+The package mirrors the JavaScript API: `moment.New` is `moment(...)`,
+`moment.CreateUTC` is `moment.utc(...)`, `moment.CreateDuration` is
+`moment.duration(...)`, and moments, durations and locales have methods named
+after their JavaScript counterparts. Arguments and results are JavaScript values
+(see `moment.Value`). Import `github.com/moment/moment/locale` to make the
+locales available.
+
+```go
+import (
+	"fmt"
+
+	"github.com/moment/moment"
+	_ "github.com/moment/moment/locale"
+)
+
+func main() {
+	m, err := moment.New("2010-10-20 4:30", "YYYY-MM-DD HH:mm")
+	if err != nil {
+		// What moment.js throws while parsing comes back as a *moment.ThrowError.
+		panic(err)
+	}
+	fmt.Println(m.Format("LLLL"))
+	fmt.Println(m.SetLocale("fr").Format("LLLL"))
+}
+```
+
+Local time follows the `TZ` environment variable and the system time-zone
+database, with the rules Node.js applies to times skipped or repeated by a
+transition.
+
+The `momentcase` command (`go build ./cmd/momentcase`) runs a case file, a JSON
+program of calls, and prints one JSON line per result; it is the harness of the
+recorded regression cases.
 
 ## License
 
@@ -76,10 +110,8 @@ of them does not imply any affiliation with or endorsement by them.
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: LICENSE
-[npm-url]: https://npmjs.org/package/moment
-[npm-version-image]: https://img.shields.io/npm/v/moment.svg?style=flat
-[npm-downloads-image]: https://img.shields.io/npm/dm/moment.svg?style=flat
-[npm-downloads-url]: https://npmcharts.com/compare/moment?minimal=true
+[go-reference-image]: https://pkg.go.dev/badge/github.com/moment/moment.svg
+[go-reference-url]: https://pkg.go.dev/github.com/moment/moment
 [coveralls-image]: https://coveralls.io/repos/moment/moment/badge.svg?branch=develop
 [coveralls-url]: https://coveralls.io/r/moment/moment?branch=develop
 [fossa-badge-image]: https://app.fossa.io/api/projects/custom%2B20126%2Fgithub.com%2Fmoment%2Fmoment.svg?type=shield

@@ -1,9 +1,0 @@
-{
-    "compileOnSave": false,
-    "compilerOptions": {
-        "module": "commonjs",
-        "noEmit": true,
-        "noImplicitAny": true
-    },
-    "files": ["./moment-tests.ts", "./package-resolution.ts"]
-}

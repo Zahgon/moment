@@ -1,0 +1,1902 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0001",
+   "tz": "America/New_York",
+   "now": 1316692863584,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       247046598000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "2003-04-06T06:39:35-12:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "M",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "M",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":-305}",
+   "{\"out\":-305}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0002",
+   "tz": "Europe/London",
+   "now": 1846631538650,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "1955-04-17T02:15:23-08:00"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       -346079929319000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       [
+        {
+         "$ref": "a"
+        },
+        {
+         "$ref": "b"
+        },
+        {
+         "$x": {
+          "call": "moment.invalid",
+          "args": []
+         }
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "d",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "year",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "max",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":4000182}",
+   "{\"out\":10952.128466779652}",
+   "{\"deprecation\":[null,\"moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[-346079929319000,-1,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0003",
+   "tz": "Europe/London",
+   "now": 1797807114915,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       -3389093800000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       [
+        2015,
+        1,
+        28
+       ],
+       "year"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "days",
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":-680302}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0004",
+   "tz": "America/New_York",
+   "now": 1511402963650,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -296563467299000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "0000-01-01T00:00:00+01:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSameOrBefore",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "YEARS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSameOrAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2020-06-15T12:00:00Z",
+       "W"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.max",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "2020-06-15T12:00:00Z",
+       "year",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       {
+        "$ref": "b"
+       },
+       "M",
+       "[]"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-62167222800000,60,true,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":false}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0006",
+   "tz": "America/New_York",
+   "now": 1071964030013,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -186471557680808
+        ]
+       }
+      },
+      "args": [
+       "-11:00"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       1383465828000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "M",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2020-06-15T12:00:00Z",
+       "minute",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "hour"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -211653527008298,
+       "dates",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1362888436000,
+       "YEARS",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "min",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":-71434}",
+   "{\"out\":-3134396334}",
+   "{\"out\":false}",
+   "{\"out\":25181969327490}",
+   "{\"out\":-5952}",
+   "{\"deprecation\":[null,\"moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[1383465828000,-300,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0007",
+   "tz": "Australia/Lord_Howe",
+   "now": 1831293351249,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       688486593000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1990-10-28 02:02",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "D",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "unknown",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.max",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":31445073000}",
+   "{\"out\":31445073000}",
+   "{\"out\":{\"$moment\":[1831293351249,660,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0008",
+   "tz": "Pacific/Apia",
+   "now": 1379039604796,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "2016-04-02T12:57:16+0545"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2010-09-26T10:04:38.697Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSame",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       [
+        {
+         "$ref": "a"
+        },
+        {
+         "$ref": "b"
+        },
+        {
+         "$x": {
+          "call": "moment.invalid",
+          "args": []
+         }
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "YEARS",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "min",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":5.5184954109107425}",
+   "{\"deprecation\":[null,\"moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[1459581136000,345,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0009",
+   "tz": "Europe/London",
+   "now": 1256729028527,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2008-03-30 01:55",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        432,
+        2
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -626212708000000,
+       "unknown"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "y",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       1224985874002,
+       "isoWeek",
+       "[]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       {
+        "$undefined": true
+       },
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":1576.0808931327163}",
+   "{\"out\":true}",
+   "{\"out\":49736253225000}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0010",
+   "tz": "Asia/Kathmandu",
+   "now": 1040975824747,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -616927419064799
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBefore",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2014-01-01",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.max",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "week",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       [
+        2015,
+        1,
+        28
+       ],
+       "YEARS",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "max",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[1040975824747,345,false,\"en\"]}}",
+   "{\"out\":-917262}",
+   "{\"out\":-19594.806693312723}",
+   "{\"deprecation\":[null,\"moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[-616927419064799,341,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0012",
+   "tz": "America/Sao_Paulo",
+   "now": 940785226365,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1456016845710
+        ]
+       }
+      },
+      "args": [
+       13
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       [
+        2007
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBefore",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2020-06-15T12:00:00Z",
+       "m"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "M",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "quarter",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       919566293143,
+       "week",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "min",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":109.64667178539426}",
+   "{\"out\":36.54889059513142}",
+   "{\"out\":886}",
+   "{\"deprecation\":[null,\"moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[1456016845710,780,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0013",
+   "tz": "Europe/London",
+   "now": 1014453739953,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       859678128000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       {
+        "$ref": "b"
+       },
+       "w",
+       "(]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "week",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":-104211}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0014",
+   "tz": "Europe/London",
+   "now": 1550602871498,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       1509233653000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1995-10-22T01:13:23.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "second",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.max",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       5
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       {
+        "$ref": "b"
+       },
+       "unknown",
+       "[]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -332915344834000,
+       "Day",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "2014-01-01",
+       "W",
+       "[]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "max",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":694909250}",
+   "{\"out\":{\"$moment\":[1509233653000,60,false,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":3870654}",
+   "{\"out\":false}",
+   "{\"deprecation\":[null,\"moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[814324403000,{\"$num\":\"-0\"},false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0015",
+   "tz": "UTC",
+   "now": 980808284872,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "0000-01-01T00:00:00+0545"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -16963,
+        9,
+        30
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       [
+        {
+         "$ref": "a"
+        },
+        {
+         "$ref": "b"
+        },
+        {
+         "$x": {
+          "call": "moment.invalid",
+          "args": []
+         }
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2020-06-15T12:00:00Z",
+       "months"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       [
+        {
+         "$ref": "a"
+        },
+        {
+         "$ref": "b"
+        },
+        {
+         "$x": {
+          "call": "moment.invalid",
+          "args": []
+         }
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBefore",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2014-01-01",
+       "millisecond"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "year",
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":16962}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0017",
+   "tz": "Asia/Kathmandu",
+   "now": 1384246886518,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        1985,
+        11
+       ]
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1985-12-31T19:54:06.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "months",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "day",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSameOrBefore",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -168481106174000,
+       "dates"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -166854757111000,
+       "Q",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       5
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":-1.001884593837535}",
+   "{\"out\":-31}",
+   "{\"out\":false}",
+   "{\"out\":21213.323456167862}",
+   "{\"out\":{\"$moment\":[502223400000,330,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0019",
+   "tz": "Europe/London",
+   "now": 1302853674944,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2027-03-28T00:22:46.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "second"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       [
+        2015,
+        1,
+        28
+       ],
+       "m",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSameOrAfter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       [
+        2015,
+        1,
+        28
+       ],
+       "D"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -201271516727392,
+       "y",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":-1059871680}",
+   "{\"out\":false}",
+   "{\"out\":4408}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0020",
+   "tz": "UTC",
+   "now": 988751303804,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -35704354446405
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       -214207139397710
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.max",
+      "args": [
+       [
+        {
+         "$ref": "a"
+        },
+        {
+         "$ref": "b"
+        },
+        {
+         "$x": {
+          "call": "moment.invalid",
+          "args": []
+         }
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -21721597593000,
+       "Day",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2014-01-01",
+       "day",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSame",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "hour"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":-161837}",
+   "{\"out\":-429315}",
+   "{\"out\":false}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0021",
+   "tz": "Australia/Lord_Howe",
+   "now": 1035243216225,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -313439797080000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       5
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": [
+       [
+        {
+         "$ref": "a"
+        },
+        {
+         "$ref": "b"
+        },
+        {
+         "$x": {
+          "call": "moment.invalid",
+          "args": []
+         }
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSameOrBefore",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "hours"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-313439797080000,636,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":true}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0022",
+   "tz": "Europe/London",
+   "now": 1255071453209,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -100741444596
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -120291937051000
+        ]
+       }
+      },
+      "args": [
+       840
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1509244168000,
+       "hours",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       {
+        "$undefined": true
+       },
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":-447218}",
+   "{\"out\":120191195606404}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0023",
+   "tz": "UTC",
+   "now": 1423573976573,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "moment",
+      "args": [
+       -504715253614000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isSame",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2014-01-01",
+       "days"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       "2020-06-15T12:00:00Z",
+       "quarter",
+       "[]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.min",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       [
+        2015,
+        1,
+        28
+       ],
+       "months",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "max",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[1423573976573,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":-24181}",
+   "{\"deprecation\":[null,\"moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/\"]}",
+   "{\"out\":{\"$moment\":[-504715253614000,{\"$num\":\"-0\"},false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0024",
+   "tz": "America/New_York",
+   "now": 1829293852817,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -500079903323000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1268550895000
+        ]
+       }
+      },
+      "args": [
+       "+02:30"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isBetween",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$ref": "b"
+       },
+       -201445058665000,
+       "hour",
+       "()"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "diff",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2020-06-15T12:00:00Z",
+       "m",
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":-8361202095.383333}"
+  ]
+ }
+]

@@ -28,51 +28,35 @@ maintainers; unsolicited modernization proposals may be closed.
 - **You will be required to sign the OpenJS Foundation CLA before your pull
   request can be merged.** The EasyCLA bot will prompt you, or you can
   [sign it now](https://api.easycla.lfx.linuxfoundation.org/v2/repository-provider/github/sign/6354452/235430945/1).
-- **Locale translations will not be merged without unit tests.** See
-  [the British English unit tests](https://github.com/moment/moment/blob/develop/src/test/locale/en-gb.js)
-  for an example.
-- **Do not include the minified files in your pull request.** These are
-  `moment.js`, `locale/*.js`, `min/*.js`. Don't worry, we'll build them when
-  we cut a release.
+- **Locale translations will not be merged without regression cases.** See
+  the recorded cases under `cmd/momentcase/testdata/` for examples.
 
 ## Code Organization
 
-Starting from version 2.10.0 the code is placed under `src/`.
-`moment.js`, `locale/*.js`, `min/*.js` are generated only on release.
+The library is a Go module that uses only the standard library.
 
-**DO NOT** submit changes to the generated files. Instead, change the source
-and test files and run the tests.
+- `*.go` at the root: the moment core (creation and parsing, formatting, units,
+  durations, locales)
+- `internal/js`: the JavaScript number, string and `Date` semantics the results
+  depend on
+- `internal/jsre`: ECMAScript regular expressions matched on UTF-16 code units
+- `locale/*.go`: locale definitions, one file per locale
+- `cmd/momentcase`: the case runner and its recorded cases
 
-- `src/lib/**/*.js` moment core files
-- `src/locale/*.js` locale files
-- `src/test/moment/*.js` moment core tests
-- `src/test/locale/*.js` locale tests
-
-Source files use ES modules, which the build bundles but does not otherwise
-transpile for legacy runtimes. Follow the compatibility-oriented style of the
-surrounding code, and do not introduce newer JavaScript syntax or built-ins
-without confirming that the supported runtimes can execute them.
-
-Moment 2 retains broad runtime compatibility, including best-effort support for
-Internet Explorer 8. This is a compatibility goal rather than a guarantee for
-every environment; test changes in affected runtimes when practical.
+Follow the style of the surrounding code and keep it `gofmt`-formatted.
 
 ## Setting Up the Development Environment
 
-To contribute, fork the library and install the dependencies. You need
-[git](http://git-scm.com/) and
-[node](http://nodejs.org/); you might use
-[nvm](https://github.com/creationix/nvm) or
-[nenv](https://github.com/ryuone/nenv) to install node.
+To contribute, fork the library. You need [git](http://git-scm.com/) and
+[Go](https://go.dev/dl/) 1.23 or newer.
 
 ```bash
 git clone https://github.com/moment/moment.git
 cd moment
-npm install --global pnpm@11.22.0
-pnpm install
 git checkout develop  # all patches against develop branch, please!
-pnpm validate         # this runs tests and lint checks
-pnpm test:typescript  # this runs TypeScript declaration tests
+gofmt -l .            # must print nothing
+go vet ./...
+go test ./...
 ```
 
 ## Changing Locale Files
@@ -98,32 +82,17 @@ If the same behavior was previously discussed or a similar change was declined,
 address the prior decision and explain what new context or evidence supports
 reconsidering it.
 
-Make locale changes in `src/locale/<locale>.js` and add or update the matching
-`src/test/locale/<locale>.js` for each distinct form affected. Do not edit the
-generated copies under `locale/`, `dist/`, or `min/`; those are regenerated for
-releases.
+Make locale changes in `locale/<locale>.go` and add or update the matching
+cases under `cmd/momentcase/testdata/` for each distinct form affected.
 
-## Development Scripts
+## Development Commands
 
-Common build and development commands are exposed as package scripts:
+- `go test ./...` Run the tests.
+- `go test -cover ./...` Run the tests with a coverage summary.
+- `go vet ./...` and `gofmt -l .` Perform static and formatting checks.
+- `go test -run '^$' -bench . .` Run the benchmarks.
+- `git config core.hooksPath .githooks` Install safeguards against development
+  on `master`.
+- `go build ./cmd/momentcase` Build the case runner.
 
-- `pnpm validate` Lint the code and run the tests. You should make sure you do
-  this before submitting a PR.
-- `pnpm test` Run the tests.
-- `pnpm test:watch` Run tests in watch mode.
-- `pnpm test:coverage` Run tests and generate a coverage report.
-- `pnpm test:typescript` Run the TypeScript declaration tests.
-- `pnpm lint` Perform syntax and code style checks.
-- `pnpm format` Format supported files with Prettier.
-- `pnpm hooks:install` Install safeguards against development on `master`.
-- `pnpm build` Build the development artifacts in `build/`.
-- `pnpm build:custom fr,ru` Build custom locale bundles
-  `moment-with-locales.custom.js` and `locales.custom.js` inside `build/umd/min`
-  containing just French and Russian.
-- `pnpm benchmark compare` Run a benchmark, or omit the name to run all
-  benchmarks.
-- `pnpm locale:authors list` List locale authors; `mention` formats mentions and
-  `find-commenters ISSUE` lists issue participants.
-
-Commands for release preparation and publication are documented in
-[RELEASING.md](RELEASING.md).
+Release preparation is documented in [RELEASING.md](RELEASING.md).

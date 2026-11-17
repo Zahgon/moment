@@ -1,0 +1,1923 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0001",
+   "tz": "Europe/London",
+   "now": 1608617317346,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2009,
+          11,
+          2,
+          5
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ku"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       7
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":2009}",
+   "{\"out\":2009}",
+   "{\"out\":52}",
+   "{\"out\":{\"$moment\":[1260075600000,{\"$num\":\"-0\"},false,\"ku\"]}}",
+   "{\"out\":\"٢٠٠٩-W٥٠-١ ٢٠٠٩-W٤٩-٧ ٥٠ ٤٩\"}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0002",
+   "tz": "Asia/Amman",
+   "now": 204466737377,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2000,
+          0,
+          30,
+          0
+         ]
+        ]
+       }
+      },
+      "args": [
+       "fr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInISOWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":7}",
+   "{\"out\":52}",
+   "{\"out\":4}",
+   "{\"out\":52}",
+   "{\"out\":\"2000-W04-6 2000-W04-7 4e 4e\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0003",
+   "tz": "Asia/Amman",
+   "now": 848557443659,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          1900,
+          11,
+          2,
+          23
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ja"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -1
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":48}",
+   "{\"out\":0}",
+   "{\"out\":52}",
+   "{\"out\":7}",
+   "{\"out\":{\"$moment\":[-62170082624000,143,false,\"ja\"]}}",
+   "{\"out\":\"-0001-W49-0 -0001-W47-7 49 47\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0004",
+   "tz": "America/New_York",
+   "now": 1894216078029,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2000,
+          0,
+          30,
+          18
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":52}",
+   "{\"out\":4}",
+   "{\"out\":52}",
+   "{\"out\":4}",
+   "{\"out\":2000}",
+   "{\"out\":\"2000-W04-6 2000-W04-7 4-я 4-я\"}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0005",
+   "tz": "America/Sao_Paulo",
+   "now": 1061272994208,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2009,
+          7,
+          4,
+          10
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ar-sa"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":2009}",
+   "{\"out\":52}",
+   "{\"out\":32}",
+   "{\"out\":2}",
+   "{\"out\":52}",
+   "{\"out\":\"٢٠٠٩-W٣٢-٢ ٢٠٠٩-W٣٢-٢ ٣٢ ٣٢\"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0006",
+   "tz": "America/Sao_Paulo",
+   "now": 1750548485797,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          32,
+          0,
+          2,
+          10
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInISOWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -1
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":1}",
+   "{\"out\":53}",
+   "{\"out\":53}",
+   "{\"out\":1}",
+   "{\"out\":32}",
+   "{\"out\":{\"$moment\":[-61158452012000,-186,false,\"ru\"]}}",
+   "{\"out\":\"0031-W51-4 0031-W51-5 51-я 51-я\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0007",
+   "tz": "Europe/London",
+   "now": 1579813618874,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "7",
+       "gggg ww d",
+       "fa",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DD dddd"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-61944652725000,-1,false,\"fa\"]}}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[\"ww\",\"d\"],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":\"۰۰۰۷-۰۱-۲۰ شنبه\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0008",
+   "tz": "Asia/Kathmandu",
+   "now": 1552512697971,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2024 53 0",
+       "gggg-ww-e",
+       "he",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DD dddd"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"he\"]}}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\" \",\" \"],\"overflow\":7,\"charsLeftOver\":2,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false,\"_overflowWeeks\":true}}",
+   "{\"out\":\"Invalid date\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0009",
+   "tz": "UTC",
+   "now": 1324004296331,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2018 2 3",
+       "e",
+       "ar",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DD dddd"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"ar\"]}}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\"18 2 3\"],\"overflow\":8,\"charsLeftOver\":6,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false,\"_overflowWeekday\":true}}",
+   "{\"out\":\"Invalid date\"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0010",
+   "tz": "Europe/London",
+   "now": 1438237232472,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2020,
+          11,
+          4,
+          21
+         ]
+        ]
+       }
+      },
+      "args": [
+       "my"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":2020}",
+   "{\"out\":49}",
+   "{\"out\":49}",
+   "{\"out\":\"၂၀၂၀-W၄၉-၄ ၂၀၂၀-W၄၉-၅ ၄၉ ၄၉\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0011",
+   "tz": "UTC",
+   "now": 1760322413873,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2026,
+          0,
+          29,
+          5
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       8
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":53}",
+   "{\"out\":4}",
+   "{\"out\":5}",
+   "{\"out\":53}",
+   "{\"out\":2026}",
+   "{\"out\":3}",
+   "{\"out\":{\"$moment\":[1770008400000,{\"$num\":\"-0\"},false,\"ru\"]}}",
+   "{\"out\":\"2026-W06-0 2026-W06-1 6-я 6-я\"}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0012",
+   "tz": "America/Sao_Paulo",
+   "now": 1080504074672,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2015,
+          11,
+          4,
+          22
+         ]
+        ]
+       }
+      },
+      "args": [
+       "en-gb"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "isoWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":4}",
+   "{\"out\":53}",
+   "{\"out\":49}",
+   "{\"out\":{\"$moment\":[-62106130412000,-186,false,\"en-gb\"]}}",
+   "{\"out\":\"0001-W49-4 0001-W49-5 49th 49th\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0013",
+   "tz": "Australia/Lord_Howe",
+   "now": 1570477427592,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          57,
+          0,
+          3,
+          17
+         ]
+        ]
+       }
+      },
+      "args": [
+       "fr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":52}",
+   "{\"out\":1}",
+   "{\"out\":2}",
+   "{\"out\":3}",
+   "{\"out\":\"0057-W01-2 0057-W01-3 1re 1re\"}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0014",
+   "tz": "America/New_York",
+   "now": 2090691189192,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2020-W01-1",
+       "W",
+       "en",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DD dddd"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[2094177600000,-240,false,\"en\"]}}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\"20-W01-1\"],\"overflow\":-1,\"charsLeftOver\":8,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":\"2036-05-12 Monday\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0015",
+   "tz": "Asia/Kathmandu",
+   "now": 819617483874,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2020,
+          10,
+          28,
+          20
+         ]
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":53}",
+   "{\"out\":2020}",
+   "{\"out\":6}",
+   "{\"out\":48}",
+   "{\"out\":6}",
+   "{\"out\":\"2020-W48-6 2020-W48-6 48th 48th\"}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0017",
+   "tz": "Europe/London",
+   "now": 795711940041,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          6,
+          11,
+          28,
+          5
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ja"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInISOWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":52}",
+   "{\"out\":52}",
+   "{\"out\":52}",
+   "{\"out\":\"0006-W52-4 0006-W52-4 52 52\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0018",
+   "tz": "America/Sao_Paulo",
+   "now": 255657736618,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2009,
+          0,
+          3,
+          11
+         ]
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":1}",
+   "{\"out\":52}",
+   "{\"out\":6}",
+   "{\"out\":2009}",
+   "{\"out\":1}",
+   "{\"out\":\"2009-W01-6 2009-W01-6 1st 1st\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0019",
+   "tz": "Asia/Amman",
+   "now": 1708859964175,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2015,
+          0,
+          29,
+          22
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":5}",
+   "{\"out\":5}",
+   "{\"out\":53}",
+   "{\"out\":\"2015-W05-3 2015-W05-4 5-я 5-я\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0020",
+   "tz": "UTC",
+   "now": 1327307074795,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "7",
+       "GGGG [W]WW",
+       "ja",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DD dddd"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-61946294400000,{\"$num\":\"-0\"},false,\"ja\"]}}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[\"WW\"],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}",
+   "{\"out\":\"0007-01-01 月曜日\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0021",
+   "tz": "UTC",
+   "now": 1984654789196,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          -29,
+          4,
+          28,
+          17
+         ]
+        ]
+       }
+      },
+      "args": [
+       "ar"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInISOWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeek",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       7
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":52}",
+   "{\"out\":53}",
+   "{\"out\":21}",
+   "{\"out\":-29}",
+   "{\"out\":-29}",
+   "{\"out\":22}",
+   "{\"out\":{\"$moment\":[-63069433200000,{\"$num\":\"-0\"},false,\"ar\"]}}",
+   "{\"out\":\"-٠٠٢٩-W٢٣-١ -٠٠٢٩-W٢١-٧ ٢٣ ٢١\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0022",
+   "tz": "Pacific/Apia",
+   "now": 1528623244017,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          2026,
+          11,
+          29,
+          23
+         ]
+        ]
+       }
+      },
+      "args": [
+       "fa"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "do": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       7
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":2027}",
+   "{\"out\":3}",
+   "{\"out\":53}",
+   "{\"out\":{\"$moment\":[-61946170384000,753,false,\"fa\"]}}",
+   "{\"out\":\"۰۰۰۷-W۰۱-۳ ۰۰۰۷-W۰۱-۲ ۱م ۱م\"}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0023",
+   "tz": "Pacific/Apia",
+   "now": 1623776806913,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         [
+          87,
+          11,
+          15,
+          18
+         ]
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "week",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weeksInWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInISOWeekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeeksInYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "weekYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gggg-[W]ww-e GGGG-[W]WW-E wo Wo"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":51}",
+   "{\"out\":1}",
+   "{\"out\":52}",
+   "{\"out\":52}",
+   "{\"out\":52}",
+   "{\"out\":87}",
+   "{\"out\":\"0087-W51-1 0087-W51-1 51st 51st\"}"
+  ]
+ }
+]

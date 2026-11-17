@@ -1,0 +1,2462 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0001",
+   "tz": "Europe/London",
+   "now": 1017560313549,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -969217874000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+00:10",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "abc",
+       true,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-0800",
+       true,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -16,
+       true,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[-969218474000,10,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-969218474000,10,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-969218474000,10,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-969189074000,-480,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-969216914000,-16,true,\"en\"]}}",
+   "{\"out\":\"1939-04-16T04:48:46.000-00:16 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0002",
+   "tz": "America/New_York",
+   "now": 259262289563,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -306398288153288
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "utc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       330,
+       {
+        "$undefined": true
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-306398288153288,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-306398288153288,330,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-306398288153288,330,true,\"en\"]}}",
+   "{\"out\":\"-7740-08-16T17:54:06.712+05:30 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0003",
+   "tz": "Asia/Amman",
+   "now": 1344783944585,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         168134605443
+        ]
+       }
+      },
+      "args": [
+       0
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.parseZone",
+         "args": [
+          "2015-01-01T00:00:00+05:45"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$num": "NaN"
+       },
+       false,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       841,
+       false,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[168134605443,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[168134605443,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[168134605443,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[168134605443,841,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":-841}",
+   "{\"out\":{\"$moment\":[168134605443,841,true,\"en\"]}}",
+   "{\"out\":\"1975-05-01T14:04:25.443+14:01 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Amman",
+   "now": 1213579867343,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "2010-03-25T19:19:32+0545"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isDSTShifted",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[1269524072000,345,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1269537572000,120,false,\"en\"]}}",
+   "{\"deprecation\":[null,\"isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information\"]}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[1269537572000,120,false,\"en\"]}}",
+   "{\"out\":\"2010-03-25T19:19:32.000+02:00 \"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0006",
+   "tz": "Asia/Amman",
+   "now": 1828012820053,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       1128038271326
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+00:10",
+       {
+        "$undefined": true
+       },
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zoneName",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       5.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isUtc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1128038271326,10,true,\"en\"]}}",
+   "{\"out\":\"Coordinated Universal Time\"}",
+   "{\"out\":{\"$moment\":[1128038271326,10,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[1128038271326,-330,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1128038271326,-330,true,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[1128038271326,-330,true,\"en\"]}}",
+   "{\"out\":\"2005-09-29T18:27:51.326-05:30 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0007",
+   "tz": "Australia/Lord_Howe",
+   "now": 1020944759407,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         941293548000
+        ]
+       }
+      },
+      "args": [
+       840
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       841,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -300,
+       {
+        "$undefined": true
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isLocal",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[941293548000,840,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[941394408000,-841,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[941394408000,-841,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[941394408000,-300,true,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[941394408000,-300,true,\"en\"]}}",
+   "{\"out\":\"1999-10-31T13:26:48.000-05:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0008",
+   "tz": "America/New_York",
+   "now": 1471773497980,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       1730603647174
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       841,
+       true,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[1730603647174,0,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$num\":\"-0\"}}",
+   "{\"out\":{\"$moment\":[1730603647174,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1730618047174,-300,false,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[1730618047174,-300,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1730549587174,841,true,\"en\"]}}",
+   "{\"out\":\"2024-11-03T02:14:07.174+14:01 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0009",
+   "tz": "America/Sao_Paulo",
+   "now": 758657680190,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "0000-01-01T00:00:00-08:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       16,
+       true,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+1:00",
+       false,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[-62167190400000,-480,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":480}",
+   "{\"out\":{\"$moment\":[-62167190400000,-480,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62167220160000,16,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62167220160000,16,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62167208040000,-186,false,\"en\"]}}",
+   "{\"out\":\"-0001-12-31T23:59:32.000-03:06 \"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0010",
+   "tz": "Asia/Amman",
+   "now": 1112268670549,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1990-04-27 00:39",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       16,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-0800",
+       true,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[641181300000,-16,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[641181300000,-16,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[641209140000,-480,true,\"en\"]}}",
+   "{\"out\":\"1990-04-27T01:39:00.000-08:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0011",
+   "tz": "America/Sao_Paulo",
+   "now": 1656702339766,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       719992555000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       60,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isDSTShifted",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isUtcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[719996155000,-60,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[719996155000,-60,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information\"]}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[719996155000,-60,true,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[719996155000,-60,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[719996155000,-60,true,\"en\"]}}",
+   "{\"out\":\"1992-10-25T05:55:55.000-01:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0012",
+   "tz": "Asia/Kathmandu",
+   "now": 1132381019527,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -415415878554000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+0545",
+       {
+        "$undefined": true
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isUTC",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-0800",
+       false,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-415415878554000,345,true,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-415415878554000,345,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-415415878554000,-480,true,\"en\"]}}",
+   "{\"out\":\"-11195-12-29T12:24:06.000-08:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0013",
+   "tz": "America/Sao_Paulo",
+   "now": 801641504852,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -9658,
+        9,
+        30,
+        20
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isLocal",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-366918080012000,-186,false,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-366918080012000,-186,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-366918080012000,-186,false,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[-366918080012000,-186,false,\"en\"]}}",
+   "{\"out\":\"-9658-10-30T20:00:00.000-03:06 \"}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0014",
+   "tz": "UTC",
+   "now": 949254762314,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -12013,
+        11,
+        31,
+        10,
+        41
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isLocal",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-441229382340000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-441229382340000,0,true,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-441229382340000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-441229382340000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"-12013-12-31T10:41:00.000+00:00 \"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0015",
+   "tz": "Europe/London",
+   "now": 1672052736941,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -9327,
+        1,
+        4,
+        22
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.parseZone",
+         "args": [
+          "2015-01-01T00:00:00+05:45"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":-1}",
+   "{\"out\":{\"$moment\":[-356495824725000,-1,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-356495824725000,-1,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-356495824725000,-1,false,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":1}",
+   "{\"out\":{\"$moment\":[-356495824725000,-1,false,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-356495824725000,-1,false,\"en\"]}}",
+   "{\"out\":\"-9327-02-04T22:00:00.000-00:01 \"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0016",
+   "tz": "Europe/London",
+   "now": 55818972961,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        2003,
+        2
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1046476800000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1046476800000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"2003-03-01T00:00:00.000+00:00 \"}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0017",
+   "tz": "America/Sao_Paulo",
+   "now": 1128761661607,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1992-02-08 23:48:00",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       15,
+       false,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+00:10",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[697600080000,900,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[697653480000,10,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[697653480000,10,true,\"en\"]}}",
+   "{\"out\":\"1992-02-09T16:48:00.000+00:10 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0018",
+   "tz": "UTC",
+   "now": 948368622337,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -4400,
+        0
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       841,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isUTC",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[-201017808000000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[-201017808000000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[-201017757540000,-841,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-201017757540000,-841,true,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-201017757540000,-841,true,\"en\"]}}",
+   "{\"out\":\"-4400-01-01T00:00:00.000-14:01 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0019",
+   "tz": "Asia/Kathmandu",
+   "now": 1338164302894,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         504904179000
+        ]
+       }
+      },
+      "args": [
+       -300
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "isUtc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-12:01",
+       false,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[504866379000,330,false,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[504866379000,330,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[504866379000,0,true,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[504866379000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[504866379000,0,true,\"en\"]}}",
+   "{\"out\":\"1985-12-31T08:39:39.000+00:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0020",
+   "tz": "Europe/London",
+   "now": 1738383129682,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1995-10-22 01:15",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       840,
+       true,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "hasAlignedHourOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+05:30",
+       false,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[814274100000,840,true,\"en\"]}}",
+   "{\"out\":true}",
+   "{\"out\":{\"$moment\":[814274100000,840,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[814274100000,330,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[814293900000,0,true,\"en\"]}}",
+   "{\"out\":\"1995-10-21T16:45:00.000+00:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0021",
+   "tz": "UTC",
+   "now": 508917291782,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -15775,
+        8,
+        27
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "abc",
+       true,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "05:00",
+       false,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       841
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-559954857600000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-559954857600000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-559954857600000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[-559954857600000,-841,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-559954857600000,-841,true,\"en\"]}}",
+   "{\"out\":\"-15775-09-26T09:59:00.000-14:01 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0022",
+   "tz": "Asia/Kathmandu",
+   "now": 976131113299,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       [
+        1919,
+        11,
+        31
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+1:00",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "05:00",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[-1578009600000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-1578009600000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-1578009600000,341,false,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[-1578009600000,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-1578009600000,341,false,\"en\"]}}",
+   "{\"out\":\"1919-12-31T05:41:16.000+05:41 \"}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0023",
+   "tz": "UTC",
+   "now": 1665163679353,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -551199111023000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "+0545"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       },
+       false,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utcOffset",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       },
+       true,
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "utc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-551199111023000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[-551199111023000,345,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-551199111023000,345,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-551199111023000,345,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-551199111023000,345,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-551199090323000,0,true,\"en\"]}}",
+   "{\"out\":\"-15497-03-13T21:34:37.000+00:00 UTC\"}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0024",
+   "tz": "Europe/London",
+   "now": 1444966011757,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       259111436000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "zone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "abc",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[259111436000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"deprecation\":[null,\"moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/\"]}",
+   "{\"out\":{\"$moment\":[259111436000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[259111436000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"1978-03-18T23:23:56.000+00:00 \"}"
+  ]
+ }
+]

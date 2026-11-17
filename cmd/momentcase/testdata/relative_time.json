@@ -1,0 +1,1223 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0001",
+   "tz": "Asia/Kathmandu",
+   "now": 1631547927588,
+   "steps": [
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         -47269958214
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       {
+        "ss": 3
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         "P1Y2M"
+        ]
+       }
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"a year\"}",
+   "{\"out\":\"in a year\"}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0002",
+   "tz": "UTC",
+   "now": 1698178140183,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1540498111205
+        ]
+       }
+      },
+      "args": [
+       "az"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "from",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1695201332417
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"5 il əvvəl\"}",
+   "{\"out\":\"5 il əvvəl\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0003",
+   "tz": "UTC",
+   "now": 1073410450814,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1073405139713
+        ]
+       }
+      },
+      "args": [
+       "ky"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "to",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1072992244286
+         ]
+        }
+       },
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"бир саат мурун\"}",
+   "{\"out\":\"5 күн\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Amman",
+   "now": 316932185879,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         316806177013
+        ]
+       }
+      },
+      "args": [
+       "me"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "to",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          318631284759
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"dan\"}",
+   "{\"out\":\"za 21 dana\"}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0005",
+   "tz": "UTC",
+   "now": 1595643530080,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.relativeTimeRounding",
+      "args": [
+       5
+      ]
+     }
+    },
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         -53684233
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":false}",
+   "{\"out\":\"15 hours ago\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0007",
+   "tz": "Asia/Kathmandu",
+   "now": 1467736376494,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1471624370134
+        ]
+       }
+      },
+      "args": [
+       "eu"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "to",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1469533690077
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"hilabete bat\"}",
+   "{\"out\":\"duela 24 egun\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0008",
+   "tz": "America/Sao_Paulo",
+   "now": 1329747059254,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.relativeTimeRounding",
+      "args": [
+       {
+        "$fn": "Math.floor"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1329778906927
+        ]
+       }
+      },
+      "args": [
+       "mk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "from",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1330930778032
+         ]
+        }
+       },
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":\"пред 8 часа\"}",
+   "{\"out\":\"13 дена\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0009",
+   "tz": "UTC",
+   "now": 1334070565300,
+   "steps": [
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         27206132
+        ]
+       }
+      },
+      "args": [
+       "be"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"8 гадзін\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0011",
+   "tz": "Europe/London",
+   "now": 1402901926566,
+   "steps": [
+    {
+     "do": {
+      "call": "moment.relativeTimeThreshold",
+      "args": [
+       "s",
+       1
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1402928289235
+        ]
+       }
+      },
+      "args": [
+       "en-nz"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "to",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1403537087495
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"7 hours ago\"}",
+   "{\"out\":\"in 7 days\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0013",
+   "tz": "Asia/Kathmandu",
+   "now": 1332255609989,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.relativeTimeRounding",
+      "args": [
+       {
+        "$fn": "Math.ceil"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1332258249989
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "from",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1333651485561
+         ]
+        }
+       },
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":true}",
+   "{\"out\":\"44 minutes ago\"}",
+   "{\"out\":\"17 days ago\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0015",
+   "tz": "UTC",
+   "now": 900827517903,
+   "steps": [
+    {
+     "do": {
+      "call": "moment.relativeTimeThreshold",
+      "args": [
+       "s",
+       5
+      ]
+     }
+    },
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         157680000000
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       {
+        "ss": 3
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         "1.12:00:00"
+        ]
+       }
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"5 years\"}",
+   "{\"out\":\"in 2 days\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0016",
+   "tz": "America/Sao_Paulo",
+   "now": 1705891468160,
+   "steps": [
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         129587131
+        ]
+       }
+      },
+      "args": [
+       "lv"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"diena\"}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0017",
+   "tz": "Australia/Lord_Howe",
+   "now": 2082274332901,
+   "steps": [
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         -2700000
+        ]
+       }
+      },
+      "args": [
+       "ar-ps"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       {
+        "s": 10,
+        "m": 30
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"ساعة\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0018",
+   "tz": "Europe/London",
+   "now": 2007431688460,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         2007352488460
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "from",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          2005032258775
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"in a day\"}",
+   "{\"out\":\"in a month\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0019",
+   "tz": "Pacific/Apia",
+   "now": 1588416326598,
+   "steps": [
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         131399030
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       false,
+       {
+        "h": 30
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"2 days\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0020",
+   "tz": "Pacific/Apia",
+   "now": 1724090263709,
+   "steps": [
+    {
+     "do": {
+      "call": "moment.relativeTimeThreshold",
+      "args": [
+       "w",
+       1
+      ]
+     }
+    },
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         27561603343
+        ]
+       }
+      },
+      "args": [
+       "fr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         "1.12:00:00"
+        ]
+       }
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"10 mois\"}",
+   "{\"out\":\"in 2 days\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0021",
+   "tz": "America/New_York",
+   "now": 289607754990,
+   "steps": [
+    {
+     "do": {
+      "call": "moment.relativeTimeThreshold",
+      "args": [
+       "ss",
+       2
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         317281317832
+        ]
+       }
+      },
+      "args": [
+       "id"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "to",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          286235480916
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"10 bulan\"}",
+   "{\"out\":\"setahun yang lalu\"}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0023",
+   "tz": "America/New_York",
+   "now": 1903698974944,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1903699019944
+        ]
+       }
+      },
+      "args": [
+       "sw"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "from",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1905166483066
+         ]
+        }
+       },
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"dakika moja iliyopita\"}",
+   "{\"out\":\"siku 17\"}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0024",
+   "tz": "Europe/London",
+   "now": 1785450770353,
+   "steps": [
+    {
+     "do": {
+      "call": "moment.relativeTimeThreshold",
+      "args": [
+       "h",
+       30
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1785324770353
+        ]
+       }
+      },
+      "args": [
+       "tlh"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "to",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1786177899215
+         ]
+        }
+       },
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"wa’ jaj\"}",
+   "{\"out\":\"wa’maH leS\"}"
+  ]
+ },
+ {
+  "id": "case-0025",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0025",
+   "tz": "UTC",
+   "now": 3710181223,
+   "steps": [
+    {
+     "let": "d",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.duration",
+        "args": [
+         3887973192
+        ]
+       }
+      },
+      "args": [
+       "zh-hk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "humanize",
+      "on": {
+       "$ref": "d"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"1 個月\"}"
+  ]
+ }
+]

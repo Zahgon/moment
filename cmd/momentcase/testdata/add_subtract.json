@@ -1,0 +1,2327 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0001",
+   "tz": "America/Sao_Paulo",
+   "now": 1310872633688,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -2423508012000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "P1M2DT3H",
+          "M"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       365
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-2420646012000,-186,false,\"en\"]}}",
+   "{\"out\":\"1893-04-17T03:13:20.365-03:06\"}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0002",
+   "tz": "America/Sao_Paulo",
+   "now": 984809192165,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -1708404972000
+        ]
+       }
+      },
+      "args": [
+       -300
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-1.5"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1.5,
+       "W"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "1.5",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-1707454572001,-300,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-1707454572002,-300,true,\"en\"]}}",
+   "{\"out\":\"1915-11-23T14:03:47.998-05:00\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0003",
+   "tz": "Asia/Kathmandu",
+   "now": 1600729942109,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         253402300800000
+        ]
+       }
+      },
+      "args": [
+       840
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "PT1H"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "-PT90M",
+          "M"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "months": 25,
+        "h": -3
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[253402299000000,840,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[253336559400000,840,true,\"en\"]}}",
+   "{\"out\":\"9997-12-01T16:30:00.000+14:00\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Amman",
+   "now": 1747465573876,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       938120813868
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "w": -1,
+        "weeks": -1
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "M",
+       25
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "d": "1.5",
+        "h": -2
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":\"2001-10-30T02:06:53.868+02:00\"}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0005",
+   "tz": "Asia/Amman",
+   "now": 1458126185922,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1998-09-18 00:54",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "months": -0.5,
+        "quarters": 0
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "P1M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[903390840000,180,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[906069240000,180,false,\"en\"]}}",
+   "{\"out\":\"1998-09-18T00:54:00.000+03:00\"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0006",
+   "tz": "UTC",
+   "now": 1468003225490,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -83528065304000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "ms": 2,
+        "weeks": 2
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ms",
+       1000
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1000,
+       "years"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       25,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[-83529274903002,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-51972366103002,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-51972366102977,0,true,\"en\"]}}",
+   "{\"out\":\"0323-01-23T23:38:17.023+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0007",
+   "tz": "Pacific/Apia",
+   "now": 1044450690317,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2020-09-27 03:21:00",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "-PT90M",
+          {
+           "$undefined": true
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "d",
+       365
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "w": 12,
+        "weeks": -2
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "P1M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1601124660000,780,false,\"en\"]}}",
+   "{\"deprecation\":[\"subtract\",\"moment().subtract(period, number) is deprecated. Please use moment().subtract(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[1570794660000,840,false,\"en\"]}}",
+   "{\"out\":\"2019-09-12T01:51:00.000+13:00\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0008",
+   "tz": "Australia/Lord_Howe",
+   "now": 1328935606414,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -2865978851000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "PT1H"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       3.7,
+       "hour"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "month",
+       24
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-2865982451000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-2865995771000,0,true,\"en\"]}}",
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[-2802837371000,0,true,\"en\"]}}",
+   "{\"out\":\"1881-03-07T18:03:49.000+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0009",
+   "tz": "Australia/Lord_Howe",
+   "now": 1137733469314,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        2013,
+        3,
+        6,
+        13
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       2,
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "-PT90M",
+          "d"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1365213600002,660,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1365208200002,660,false,\"en\"]}}",
+   "{\"out\":\"2013-04-06T11:30:00.002+11:00\"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0010",
+   "tz": "Pacific/Apia",
+   "now": 1219743897731,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       1569672664506
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "millisecond",
+       13
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       7,
+       "week"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-1.5"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[\"subtract\",\"moment().subtract(period, number) is deprecated. Please use moment().subtract(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[1569672664493,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1573906264493,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1573906264491,0,true,\"en\"]}}",
+   "{\"out\":\"2019-11-16T12:11:04.491+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0011",
+   "tz": "Australia/Lord_Howe",
+   "now": 547530866785,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2021-04-04 01:40",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       0,
+       "hours"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "2:30"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "M": -1,
+        "h": 3
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1617469800000,630,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1620051000000,630,false,\"en\"]}}",
+   "{\"out\":\"2021-05-04T00:40:00.000+10:30\"}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0012",
+   "tz": "Asia/Amman",
+   "now": 1449299914744,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2009-10-30 00:35:00",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Q",
+       24
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       24,
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "M",
+       25
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "weeks",
+       12
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "W",
+       2.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[1446155940000,180,false,\"en\"]}}",
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"deprecation\":[\"subtract\",\"moment().subtract(period, number) is deprecated. Please use moment().subtract(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[1504735140000,180,false,\"en\"]}}",
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":\"2017-09-25T00:59:00.000+03:00\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0013",
+   "tz": "Asia/Kathmandu",
+   "now": 871395941030,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1986-01-01 00:06:00",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "P1M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "months",
+       0
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -0.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "x",
+       "y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[507580560000,345,false,\"en\"]}}",
+   "{\"deprecation\":[\"subtract\",\"moment().subtract(period, number) is deprecated. Please use moment().subtract(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[507580560000,345,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[507580560000,345,false,\"en\"]}}",
+   "{\"out\":\"1986-02-01T00:21:00.000+05:45\"}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0014",
+   "tz": "Australia/Lord_Howe",
+   "now": 1226459084475,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -441253835838898
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "P1M2DT3H",
+          {
+           "$undefined": true
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "months": 365,
+        "quarters": 0
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "x"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "d": 7,
+        "weeks": -3
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "1.02:03:04.5",
+          "M"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-441250973838898,636,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-440290983438898,636,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-440290983438898,636,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-440292193038898,636,false,\"en\"]}}",
+   "{\"out\":\"-11983-09-13T01:42:05.602+10:36\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0015",
+   "tz": "Europe/London",
+   "now": 1892209141041,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        9999,
+        11
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "days": 2.5,
+        "m": -1
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "w": 2,
+        "quarters": -3
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[253399622400001,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[253399881540001,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[253377331140001,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"9999-03-17T23:59:00.001+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0016",
+   "tz": "Asia/Kathmandu",
+   "now": 1582787042560,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       [
+        1985,
+        11,
+        31
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "1",
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "quarter",
+       0
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "P1M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "ms": 2.5,
+        "weeks": -2
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "d",
+       0.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[504835260000,0,true,\"en\"]}}",
+   "{\"deprecation\":[\"subtract\",\"moment().subtract(period, number) is deprecated. Please use moment().subtract(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[507513660000,0,true,\"en\"]}}",
+   "{\"deprecation\":[\"add\",\"moment().add(period, number) is deprecated. Please use moment().add(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[508809659997,0,true,\"en\"]}}",
+   "{\"out\":\"1986-02-15T00:00:59.997+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0017",
+   "tz": "UTC",
+   "now": 1796092707269,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "-8821-09-14 13:14:59",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1000,
+       "millisecond"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1000
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[216218898900000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[216218898899000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"8821-09-14T13:14:59.000+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0018",
+   "tz": "Asia/Kathmandu",
+   "now": 1588575543756,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         504898240000
+        ]
+       }
+      },
+      "args": [
+       -300
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "-PT90M",
+          "M"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "P1M2DT3H",
+          "d"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[504903640000,-300,true,\"en\"]}}",
+   "{\"out\":\"1986-02-02T17:00:40.000-05:00\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0019",
+   "tz": "America/Sao_Paulo",
+   "now": 1406025000273,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1998-02-28 22:33",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-1.5"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "1.5",
+       "h"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "P1M2DT3H",
+          "M"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1,
+       "millisecond"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "w": 13,
+        "weeks": 1
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[888712380001,-120,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[888717780001,-180,false,\"en\"]}}",
+   "{\"out\":\"1998-04-07T02:03:00.000-03:00\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0020",
+   "tz": "Asia/Kathmandu",
+   "now": 1634704825738,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        1985,
+        11,
+        31,
+        18,
+        58
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          0.5,
+          "d"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       365,
+       "hour"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "P1M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[504797280000,330,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[503483280000,330,false,\"en\"]}}",
+   "{\"out\":\"1985-11-15T13:58:00.000+05:30\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0021",
+   "tz": "UTC",
+   "now": 1241704553984,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "-8476-07-26 07:05",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       0.5
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "weeks",
+       "1"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "P1M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       7,
+       "year"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment.duration",
+         "args": [
+          "-PT90M",
+          "d"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[\"subtract\",\"moment().subtract(period, number) is deprecated. Please use moment().subtract(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.\"]}",
+   "{\"out\":{\"$moment\":[205326860700000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[205329539100000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[205550377500000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"8483-08-19T08:35:00.000+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0022",
+   "tz": "UTC",
+   "now": 758352353401,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "-0138-02-13 20:53",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "d": 2.5,
+        "weeks": 0
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "d": 1,
+        "h": 1
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-57808264020000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-57808354020000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":\"0138-02-15T19:53:00.000+00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0023",
+   "tz": "Pacific/Apia",
+   "now": 1663602410750,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -12856,
+        9
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "months": 12,
+        "weeks": -3
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "-1.5"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "PT1H"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "M": 24,
+        "m": 1
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-467869609983998,753,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-467806447923998,753,false,\"en\"]}}",
+   "{\"out\":\"-12855-10-22T01:01:00.002+12:33\"}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0024",
+   "tz": "Asia/Kathmandu",
+   "now": 1111847733966,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1986-01-01 00:45",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -1
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       7,
+       "day"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       2.5,
+       "weeks"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[507063599999,345,false,\"en\"]}}",
+   "{\"out\":\"1986-01-26T00:44:59.999+05:45\"}"
+  ]
+ },
+ {
+  "id": "case-0025",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0025",
+   "tz": "Asia/Amman",
+   "now": 993413864012,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -29417471613253
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "subtract",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       3.7
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "do": {
+      "call": "add",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1.5,
+       "y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-29417471613256,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-29370210813256,0,true,\"en\"]}}",
+   "{\"out\":\"1039-04-19T00:06:26.744+00:00\"}"
+  ]
+ }
+]

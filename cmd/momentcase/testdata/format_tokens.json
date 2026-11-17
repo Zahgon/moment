@@ -1,0 +1,1854 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0001",
+   "tz": "UTC",
+   "now": 1030153298875,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "do": {
+      "set": "moment.defaultFormat",
+      "value": ""
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "k:mm kk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YY YYYY"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "l ll lll"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"24:00 24\"}",
+   "{\"out\":\"00 0000\"}",
+   "{\"out\":\"1/1/0000 Jan 1, 0000 Jan 1, 0000 12:00 AM\"}",
+   "{\"out\":\"0000-01-01T00:00:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0002",
+   "tz": "Pacific/Apia",
+   "now": 1541796318546,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -262309707727793
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "wo [week] gggg / Wo GGGG"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY MM\rDD\nX"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "e[at] ZZ\\Y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "k:mm kk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"39th week -6343 / 39th -6343\"}",
+   "{\"out\":\"-63430926-262309707728\"}",
+   "{\"out\":\"3at +0000Y\"}",
+   "{\"out\":\"-6343\"}",
+   "{\"out\":\"24:17 24\"}",
+   "{\"out\":\"-6343-09-26T00:17:52Z\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0003",
+   "tz": "UTC",
+   "now": 1374011637439,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       [
+        -8584,
+        6,
+        29,
+        23,
+        59
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "set": "moment.defaultFormat",
+      "value": "YYYY [Z]"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "sX\\xdo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dddd, MMMM Do YYYY, h:mm:ss a"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "yTd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"0-333033897660x1st\"}",
+   "{\"out\":\"Monday, July 29th -8584, 11:59:00 pm\"}",
+   "{\"out\":\"8585T1\"}",
+   "{\"out\":\"Mon Jul 29 -8584 23:59:00 GMT+0000\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0004",
+   "tz": "Pacific/Apia",
+   "now": 1347337458134,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -130308799628000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "utc",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Do[at] X"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "S SS SSS SSSS SSSSS SSSSSS SSSSSSS SSSSSSSS SSSSSSSSS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "yTH, ww "
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toJSON",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"5that -130308799628\"}",
+   "{\"out\":\"0 00 000 0000 00000 000000 0000000 00000000 000000000\"}",
+   "{\"out\":\"2161T7, 36\"}",
+   "{\"out\":\"-002160-09-05T07:12:52.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0006",
+   "tz": "Pacific/Apia",
+   "now": 1449986626219,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1522515182000
+        ]
+       }
+      },
+      "args": [
+       330
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MMM MMMM Mo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "😀 YYYY [😀]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "😀 YYYY [😀]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ADo/SSSSSSm  gggg[at] ddd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "llll"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Mar March 3rd\"}",
+   "{\"out\":\"😀 2018 😀\"}",
+   "{\"out\":\"😀 2018 😀\"}",
+   "{\"out\":\"PM31st/00000023  2018at Sat\"}",
+   "{\"out\":\"Sat, Mar 31, 2018 10:23 PM\"}",
+   "{\"out\":\"2018-03-31T16:53:02.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0007",
+   "tz": "Australia/Lord_Howe",
+   "now": 904820312150,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2007-10-27T15:08:13.000Z"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YY YYYY"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "WWm\\xHH \n"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "inspect",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"07 2007\"}",
+   "{\"out\":\"438x15 \"}",
+   "{\"out\":\"2007\"}",
+   "{\"out\":\"moment.utc(\\\"2007-10-27T15:08:13.000+00:00\\\")\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0008",
+   "tz": "Asia/Kathmandu",
+   "now": 1814708292266,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        1373,
+        6,
+        9,
+        14
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "set": "moment.defaultFormatUtc",
+      "value": ""
+     }
+    },
+    {
+     "do": {
+      "call": "local",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "LLLL"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "[[nested]] \\[esc\\] \\L LL"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "X-Do Z  hW"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "["
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Friday, July 9, 1373 2:00 PM\"}",
+   "{\"out\":\"[nested] [50c] L July 9, 1373\"}",
+   "{\"out\":\"-18823074076-9th +05:41  227\"}",
+   "{\"out\":\"[\"}",
+   "{\"out\":\"1373-07-09T14:00:00+05:41\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0009",
+   "tz": "Pacific/Apia",
+   "now": 1609974593814,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "2011-04-02T11:25:58+01:00"
+      ]
+     }
+    },
+    {
+     "do": {
+      "set": "moment.defaultFormatUtc",
+      "value": "LLLL"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "x[at] m.MME:SSSSSSSSS  NNNNN, a\\Y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "S SS SSS SSSS SSSSS SSSSSS SSSSSSS SSSSSSSS SSSSSSSSS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "SS\\xd\\xw-m [lit]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "N NN NNN NNNN NNNNN y yo yy yyy yyyy"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"1301739958000at 25.046:000000000  AD, amY\"}",
+   "{\"out\":\"0 00 000 0000 00000 000000 0000000 00000000 000000000\"}",
+   "{\"out\":\"00x6x14-25 lit\"}",
+   "{\"out\":\"AD AD AD Anno Domini AD 2011 2011th 2011 2011 2011\"}",
+   "{\"out\":\"Sat Apr 02 2011 11:25:58 GMT+0100\"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0010",
+   "tz": "Pacific/Apia",
+   "now": 1711502748094,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       1538233753000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "[[nested]] \\[esc\\] \\L LL"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YY YYYY"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "😀 YYYY [😀]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "SSTYY/dd[at] Wo.NNNNN "
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toJSON",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"[nested] [013c] L September 30, 2018\"}",
+   "{\"out\":\"18 2018\"}",
+   "{\"out\":\"😀 2018 😀\"}",
+   "{\"out\":\"00T18/Suat 39th.AD\"}",
+   "{\"out\":\"2018-09-29T15:09:13.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0011",
+   "tz": "Europe/London",
+   "now": 1392333360170,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "1944-04-02T02:07:22+01:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY-MM-DDTHH:mm:ss.SSSZ"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "mmTxZZ/w"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "N NN NNN NNNN NNNNN y yo yy yyy yyyy"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "\\"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "X/mm[at] ZZ"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "inspect",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"1944-04-02T02:07:22.000+01:00\"}",
+   "{\"out\":\"07T-812587958000+0100/15\"}",
+   "{\"out\":\"AD AD AD Anno Domini AD 1944 1944th 1944 1944 1944\"}",
+   "{\"out\":\"\"}",
+   "{\"out\":\"-812587958/07at +0100\"}",
+   "{\"out\":\"moment.parseZone(\\\"1944-04-02T02:07:22.000+01:00\\\")\"}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0012",
+   "tz": "Asia/Amman",
+   "now": 1048587300844,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1892-09-24T16:26:06.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "DDDD.Z:SSSSSSSSS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "A a h hh H HH"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "SSS/ssTD, h, wo[at] Mo\\Y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"268.+02:23:000000000\"}",
+   "{\"out\":\"PM pm 6 06 18 18\"}",
+   "{\"out\":\"000/50T24, 6, 39that 9thY\"}",
+   "{\"out\":\"1892-09-24T18:49:50+02:23\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0013",
+   "tz": "Australia/Lord_Howe",
+   "now": 1289614876660,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -3586200579000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dddd, MMMM Do YYYY, h:mm:ss a"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "SSSSSS-WW.ddda [lit]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Sunday, May 11th 1856, 1:10:21 am\"}",
+   "{\"out\":\"000000-19.Sunam lit\"}",
+   "{\"out\":\"1856\"}",
+   "{\"out\":\"1856-05-11T01:10:21.000Z\"}",
+   "{\"out\":\"1856-05-11T01:10:21Z\"}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0014",
+   "tz": "America/Sao_Paulo",
+   "now": 1379596150983,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "do": {
+      "set": "moment.defaultFormat",
+      "value": ""
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "A a h hh H HH"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "hh ss  X\\xmm/Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "YYYY MM\rDD\nX"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"PM pm 8 08 20 20\"}",
+   "{\"out\":\"08 32  -62167219200x53/31st\"}",
+   "{\"out\":\"-00011231-62167219200\"}",
+   "{\"out\":\"0000-01-01T00:00:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0015",
+   "tz": "Asia/Kathmandu",
+   "now": 1080169995882,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1985-12-31 23:29",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ddd Do ZTss"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "S SS SSS SSSS SSSSS SSSSSS SSSSSSS SSSSSSSS SSSSSSSSS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "X:Y[at] dddd:ZZ.M"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toJSON",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Tue 31st +00:00T00\"}",
+   "{\"out\":\"0 00 000 0000 00000 000000 0000000 00000000 000000000\"}",
+   "{\"out\":\"504919740:1985at Tuesday:+0000.12\"}",
+   "{\"out\":\"1985-12-31T23:29:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0016",
+   "tz": "UTC",
+   "now": 917567138024,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Wo:N a"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ZTY[at] MM.WW"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toJSON",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"52nd:BC am\"}",
+   "{\"out\":\"+00:00T0000at 01.52\"}",
+   "{\"out\":\"0000-01-01T00:00:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0018",
+   "tz": "Pacific/Apia",
+   "now": 1536153761829,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2012-09-30 03:08:00",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "y/XThh[at] Do.mm[at] wo/dd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "w/s:h"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"2012/1348927680T04at 30th.08at 40th/Su\"}",
+   "{\"out\":\"40/0:4\"}",
+   "{\"out\":\"2012-09-29T14:08:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0019",
+   "tz": "America/New_York",
+   "now": 1003422721417,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       1793505826640
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "l ll lll"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "LLLL"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "gg.ww-Q/X:Z.s:SSSSSS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toJSON",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"11/1/2026 Nov 1, 2026 Nov 1, 2026 12:03 AM\"}",
+   "{\"out\":\"Sunday, November 1, 2026 12:03 AM\"}",
+   "{\"out\":\"26.45-4/1793505826:-04:00.46:640000\"}",
+   "{\"out\":\"2026-11-01T04:03:46.640Z\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0020",
+   "tz": "Pacific/Apia",
+   "now": 1833350999707,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "0000-01-01T00:00:00+00:00"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "parseZone",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dd\\xN MMTWo.YYYYY.ss"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dd ddd dddd do d"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"SaxBC 01T52nd.00000.00\"}",
+   "{\"out\":\"Sa Sat Saturday 6th 6\"}",
+   "{\"out\":\"Sat Jan 01 0000 00:00:00 GMT+0000\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0021",
+   "tz": "Europe/London",
+   "now": 1108153308038,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -396796268288000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "😀 YYYY [😀]"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "d.Z\\xmm/S  s\\xk/yo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "hmm hmmss Hmm Hmmss"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "S SS SSS SSSS SSSSS SSSSSS SSSSSSS SSSSSSSS SSSSSSSSS"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Qo [quarter] YYYY"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"😀 -10604 😀\"}",
+   "{\"out\":\"0.-00:01x20/0  37x14/10605th\"}",
+   "{\"out\":\"220 22037 1420 142037\"}",
+   "{\"out\":\"0 00 000 0000 00000 000000 0000000 00000000 000000000\"}",
+   "{\"out\":\"1st quarter -10604\"}",
+   "{\"out\":\"-010604-01-10T14:20:37.000-00:01\"}",
+   "{\"out\":\"-10604-01-10T14:20:37-00:01\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0022",
+   "tz": "Australia/Lord_Howe",
+   "now": 1813628246814,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       [
+        373,
+        11,
+        19,
+        13
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "set": "moment.defaultFormatUtc",
+      "value": "LLLL"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Qow:DDDDTSSS[at] e, NNNN"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dd ddd dddd do d"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toISOString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"4th51:353T000at 3, Anno Domini\"}",
+   "{\"out\":\"We Wed Wednesday 3rd 3\"}",
+   "{\"out\":\"0373-12-19T13:00:00.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0023",
+   "tz": "America/New_York",
+   "now": 873157551490,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -38204355340000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ww/DD.x"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dddd, MMMM Do YYYY, h:mm:ss a"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "inspect",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"19/09.-38204355340000\"}",
+   "{\"out\":\"Saturday, May 9th 0759, 11:04:20 pm\"}",
+   "{\"out\":\"moment.utc(\\\"0759-05-09T23:04:20.000+00:00\\\")\"}",
+   "{\"out\":\"0759-05-09T23:04:20Z\"}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0024",
+   "tz": "Australia/Lord_Howe",
+   "now": 1460619742041,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       1838207327000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "eHHmm E e"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "A a h hh H HH"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "wo [week] gggg / Wo GGGG"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toJSON",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"00008 7 0\"}",
+   "{\"out\":\"AM am 12 12 0 00\"}",
+   "{\"out\":\"15th week 2028 / 13th 2028\"}",
+   "{\"out\":\"2028-04-01T13:08:47.000Z\"}"
+  ]
+ },
+ {
+  "id": "case-0025",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0025",
+   "tz": "America/Sao_Paulo",
+   "now": 1735417186550,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "[Today is] dddd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "w[at] mm, ddd  a\\xXTN.DD"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MM-mm, D"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "wo [week] gggg / Wo GGGG"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toString",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Today is Friday\"}",
+   "{\"out\":\"1at 53, Fri  pmx-62167219200TBC.31\"}",
+   "{\"out\":\"12-53, 31\"}",
+   "{\"out\":\"1st week 0000 / 52nd -0001\"}",
+   "{\"out\":\"Fri Dec 31 -0001 20:53:32 GMT-0306\"}"
+  ]
+ }
+]

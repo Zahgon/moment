@@ -1,0 +1,1909 @@
+[
+ {
+  "id": "case-0002",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0002",
+   "tz": "Asia/Kathmandu",
+   "now": 1014439849065,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         -3019580224000
+        ]
+       }
+      },
+      "args": [
+       "sl"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "l"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "l",
+       "sl",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "l"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"25. 4. 1874\"}",
+   "{\"out\":{\"$moment\":[-3019614076000,341,false,\"sl\"]}}",
+   "{\"out\":\"25. 4. 1874\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[1874,3,25],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0003",
+   "tz": "UTC",
+   "now": 1134457978556,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         "1499-05-27 12:25:06",
+         "YYYY-MM-DD HH:mm:ss"
+        ]
+       }
+      },
+      "args": [
+       "ar-dz"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "lll"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "p",
+     "x": {
+      "call": "postformat",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "ar-dz"
+        ]
+       }
+      },
+      "args": [
+       {
+        "$ref": "s"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "p"
+       },
+       "lll",
+       "ar-dz",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "lll"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"27 ماي 1499 12:25\"}",
+   "{\"out\":{\"$moment\":[-14850646500000,{\"$num\":\"-0\"},false,\"ar-dz\"]}}",
+   "{\"out\":\"27 ماي 1499 12:25\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[1499,4,27,12,25],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Kathmandu",
+   "now": 1614495484891,
+   "steps": [
+    {
+     "let": "l",
+     "x": {
+      "call": "moment.localeData",
+      "args": [
+       "es-do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekdaysParse",
+      "on": {
+       "$ref": "l"
+      },
+      "args": [
+       "mar.",
+       "dd",
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment",
+      "args": [
+       "mar.",
+       "ddd",
+       "es-do",
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":2}",
+   "{\"out\":{\"$moment\":[1614017700000,345,false,\"es-do\"]}}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0005",
+   "tz": "Europe/London",
+   "now": 1747565084078,
+   "steps": [
+    {
+     "let": "l",
+     "x": {
+      "call": "moment.localeData",
+      "args": [
+       "ky"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "monthsParse",
+      "on": {
+       "$ref": "l"
+      },
+      "args": [
+       "авг",
+       "MMM",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment",
+      "args": [
+       "авг",
+       "MMM",
+       "ky",
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":7}",
+   "{\"out\":{\"$moment\":[1754002800000,60,false,\"ky\"]}}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0006",
+   "tz": "Europe/London",
+   "now": 973519790249,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         688531951000
+        ]
+       }
+      },
+      "args": [
+       "es-mx"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "MMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "MMM",
+       "es-mx"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"oct.\"}",
+   "{\"out\":{\"$moment\":[970354800000,60,false,\"es-mx\"]}}",
+   "{\"out\":\"oct.\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[{\"$undefined\":true},9],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0008",
+   "tz": "Asia/Kathmandu",
+   "now": 1495669130090,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         504899341000
+        ]
+       }
+      },
+      "args": [
+       "ne"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "dddd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "p",
+     "x": {
+      "call": "postformat",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "ne"
+        ]
+       }
+      },
+      "args": [
+       {
+        "$ref": "s"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "p"
+       },
+       "dddd",
+       "ne",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dddd"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"मङ्गलबार\"}",
+   "{\"out\":{\"$moment\":[1495476900000,345,false,\"ne\"]}}",
+   "{\"out\":\"मङ्गलबार\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0009",
+   "tz": "Asia/Kathmandu",
+   "now": 1857179514559,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -86720001896000
+        ]
+       }
+      },
+      "args": [
+       "gl"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "l"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "l",
+       "gl",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "l"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"14/12/-0779\"}",
+   "{\"out\":{\"$moment\":[-37554385276000,341,false,\"gl\"]}}",
+   "{\"out\":\"14/12/0779\"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0010",
+   "tz": "America/New_York",
+   "now": 52173265828,
+   "steps": [
+    {
+     "let": "l",
+     "x": {
+      "call": "moment.localeData",
+      "args": [
+       "hr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "monthsParse",
+      "on": {
+       "$ref": "l"
+      },
+      "args": [
+       "kolovoz　",
+       {
+        "$undefined": true
+       },
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment",
+      "args": [
+       "kolovoz　",
+       "MMMM",
+       "hr",
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":null}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"hr\"]}}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0011",
+   "tz": "Europe/London",
+   "now": 1100952881790,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "AD 2015",
+       "Ny",
+       "ja",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "NNNN y yo N NNNNN"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"ja\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\" \"],\"overflow\":-1,\"charsLeftOver\":1,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[2015],\"era\":{\"since\":-62135596725000,\"until\":-3029529600000,\"offset\":1,\"name\":\"西暦\",\"narrow\":\"AD\",\"abbr\":\"AD\"},\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0012",
+   "tz": "Pacific/Apia",
+   "now": 82994143675,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         "2016-09-25 03:47",
+         "YYYY-MM-DD HH:mm:ss"
+        ]
+       }
+      },
+      "args": [
+       "vi"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "MMMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "MMMM",
+       "vi",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MMMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"tháng 9\"}",
+   "{\"out\":{\"$moment\":[84193200000,-660,false,\"vi\"]}}",
+   "{\"out\":\"tháng 9\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[{\"$undefined\":true},8],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0013",
+   "tz": "Australia/Lord_Howe",
+   "now": 987190965499,
+   "steps": [
+    {
+     "let": "l",
+     "x": {
+      "call": "moment.localeData",
+      "args": [
+       "zh-mo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "monthsParse",
+      "on": {
+       "$ref": "l"
+      },
+      "args": [
+       "一",
+       "MMM",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment",
+      "args": [
+       "一",
+       "MMMM",
+       "zh-mo",
+       true
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$undefined\":true}}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"zh-mo\"]}}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0014",
+   "tz": "Asia/Amman",
+   "now": 1580122125460,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         641175774000
+        ]
+       }
+      },
+      "args": [
+       "sr"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "LLLL"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "LLLL",
+       "sr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "LLLL"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"petak, 27. april 1990. 0:22\"}",
+   "{\"out\":{\"$moment\":[641168520000,180,false,\"sr\"]}}",
+   "{\"out\":\"petak, 27. april 1990. 1:22\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0015",
+   "tz": "UTC",
+   "now": 1893113884524,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -137518657628991
+        ]
+       }
+      },
+      "args": [
+       "mt"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "LLL"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "LLL",
+       "mt",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "LLL"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"16 Marzu -2388 20:52\"}",
+   "{\"out\":{\"$moment\":[13197329520000,{\"$num\":\"-0\"},false,\"mt\"]}}",
+   "{\"out\":\"16 Marzu 2388 20:52\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0016",
+   "tz": "Pacific/Apia",
+   "now": 1703200445281,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         "1910-12-31 23:31:00",
+         "YYYY-MM-DD HH:mm:ss"
+        ]
+       }
+      },
+      "args": [
+       "si"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "dd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "p",
+     "x": {
+      "call": "postformat",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "si"
+        ]
+       }
+      },
+      "args": [
+       {
+        "$ref": "s"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "p"
+       },
+       "dd",
+       "si",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "dd"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"සෙ\"}",
+   "{\"out\":{\"$moment\":[1703242800000,780,false,\"si\"]}}",
+   "{\"out\":\"සෙ\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0019",
+   "tz": "Australia/Lord_Howe",
+   "now": 1346655762901,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -2996774469000
+        ]
+       }
+      },
+      "args": [
+       "tet"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "L LT"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "L LT",
+       "tet"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "L LT"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"14/01/1875 13:15\"}",
+   "{\"out\":{\"$moment\":[-2996774480000,636,false,\"tet\"]}}",
+   "{\"out\":\"14/01/1875 13:15\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[1875,0,14,13,15],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0020",
+   "tz": "America/New_York",
+   "now": 307261545886,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         "1980-10-26 01:51",
+         "YYYY-MM-DD HH:mm"
+        ]
+       }
+      },
+      "args": [
+       "lo"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "L LT"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "L LT",
+       "lo",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "L LT"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"26/10/1980 01:51\"}",
+   "{\"out\":{\"$moment\":[341387460000,-240,false,\"lo\"]}}",
+   "{\"out\":\"26/10/1980 01:51\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0021",
+   "tz": "UTC",
+   "now": 1691753854072,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -8640000000000000
+        ]
+       }
+      },
+      "args": [
+       "ja"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "D MMM YYYY HH:mm"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "p",
+     "x": {
+      "call": "postformat",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "ja"
+        ]
+       }
+      },
+      "args": [
+       {
+        "$ref": "s"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "p"
+       },
+       "D MMM YYYY HH:mm",
+       "ja",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "D MMM YYYY HH:mm"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"20 4月 -271821 00:00\"}",
+   "{\"out\":{\"$moment\":[23613984000000,{\"$num\":\"-0\"},false,\"ja\"]}}",
+   "{\"out\":\"20 4月 2718 00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0022",
+   "tz": "UTC",
+   "now": 1102589968451,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -216938904835000
+        ]
+       }
+      },
+      "args": [
+       "ja"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "MMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "MMM",
+       "ja",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"6月\"}",
+   "{\"out\":{\"$moment\":[1086048000000,{\"$num\":\"-0\"},false,\"ja\"]}}",
+   "{\"out\":\"6月\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[{\"$undefined\":true},5],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0023",
+   "tz": "Australia/Lord_Howe",
+   "now": 1782119655735,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         "2018-10-07 02:40",
+         "YYYY-MM-DD HH:mm:ss"
+        ]
+       }
+      },
+      "args": [
+       "en-ca"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "Wo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "Wo",
+       "en-ca"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Wo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"40th\"}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en-ca\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":true,\"unusedTokens\":[\"Wo\"],\"unusedInput\":[\"40th\"],\"overflow\":-1,\"charsLeftOver\":4,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0025",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0025",
+   "tz": "Asia/Kathmandu",
+   "now": 1403184176968,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         -1577941090068
+        ]
+       }
+      },
+      "args": [
+       "fr-ch"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "MMMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "p",
+     "x": {
+      "call": "postformat",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "fr-ch"
+        ]
+       }
+      },
+      "args": [
+       {
+        "$ref": "s"
+       }
+      ]
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "p"
+       },
+       "MMMM",
+       "fr-ch",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MMMM"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"décembre\"}",
+   "{\"out\":{\"$moment\":[1417371300000,345,false,\"fr-ch\"]}}",
+   "{\"out\":\"décembre\"}"
+  ]
+ },
+ {
+  "id": "case-0026",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0026",
+   "tz": "Asia/Kathmandu",
+   "now": 1551783129961,
+   "steps": [
+    {
+     "let": "l",
+     "x": {
+      "call": "moment.localeData",
+      "args": [
+       "am-et"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekdaysParse",
+      "on": {
+       "$ref": "l"
+      },
+      "args": [
+       "ዓር",
+       "dd",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment",
+      "args": [
+       "ዓር",
+       "ddd",
+       "am-et",
+       false
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":5}",
+   "{\"out\":{\"$moment\":[1551982500000,345,false,\"am-et\"]}}"
+  ]
+ },
+ {
+  "id": "case-0027",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0027",
+   "tz": "America/Sao_Paulo",
+   "now": 1396982985853,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -569261677015000
+        ]
+       }
+      },
+      "args": [
+       "ml"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "D MMM YYYY HH:mm"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "D MMM YYYY HH:mm",
+       "ml",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "D MMM YYYY HH:mm"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"26 ഒക്ടോ. -16070 01:16\"}",
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"ml\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[\"-\",\"0\"],\"overflow\":-1,\"charsLeftOver\":2,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[1607,9,26,1,16],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0028",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0028",
+   "tz": "Australia/Lord_Howe",
+   "now": 1659118530997,
+   "steps": [
+    {
+     "let": "b",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         "2016-10-02 01:38",
+         "YYYY-MM-DD HH:mm:ss"
+        ]
+       }
+      },
+      "args": [
+       "nn"
+      ]
+     }
+    },
+    {
+     "let": "s",
+     "x": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "MMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "s"
+     }
+    },
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       {
+        "$ref": "s"
+       },
+       "MMM",
+       "nn",
+       false
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "MMM"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"okt.\"}",
+   "{\"out\":{\"$moment\":[1664544600000,630,false,\"nn\"]}}",
+   "{\"out\":\"okt.\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[],\"unusedInput\":[],\"overflow\":-1,\"charsLeftOver\":0,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[{\"$undefined\":true},9],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ },
+ {
+  "id": "case-0029",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0029",
+   "tz": "UTC",
+   "now": 877037999581,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "H30",
+       "NNNNy年",
+       "en",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "NNNN y yo N NNNNN"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "parsingFlags",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[{\"$num\":\"NaN\"},{\"$num\":\"NaN\"},false,\"en\"]}}",
+   "{\"out\":\"Invalid date\"}",
+   "{\"out\":{\"empty\":false,\"unusedTokens\":[\"NNNN\",\"年\"],\"unusedInput\":[\"H\"],\"overflow\":-1,\"charsLeftOver\":1,\"nullInput\":false,\"invalidEra\":null,\"invalidMonth\":null,\"invalidOffset\":null,\"invalidFormat\":false,\"userInvalidated\":false,\"iso\":false,\"parsedDateParts\":[30],\"era\":null,\"meridiem\":{\"$undefined\":true},\"rfc2822\":false,\"weekdayMismatch\":false}}"
+  ]
+ }
+]

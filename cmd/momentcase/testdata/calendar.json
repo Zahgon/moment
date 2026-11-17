@@ -1,0 +1,1254 @@
+[
+ {
+  "id": "case-0002",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0002",
+   "tz": "Australia/Lord_Howe",
+   "now": 1009477495046,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1010139355046
+        ]
+       }
+      },
+      "args": [
+       "sk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"04.01.2002\"}",
+   "{\"out\":\"sameElse\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0003",
+   "tz": "Europe/London",
+   "now": 768007668324,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         768047808324
+        ]
+       }
+      },
+      "args": [
+       "eu"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       null,
+       {
+        "sameDay": "[Same] LT",
+        "nextDay": "[Next] LT",
+        "lastWeek": "[Last] dddd",
+        "sameElse": "L"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Same 11:36\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0004",
+   "tz": "America/New_York",
+   "now": 1251953237109,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1252250957109
+        ]
+       }
+      },
+      "args": [
+       "en-gb"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "en-gb"
+        ]
+       }
+      },
+      "args": [
+       "lastWeek",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Sunday at 11:29\"}",
+   "{\"out\":\"nextWeek\"}",
+   "{\"out\":\"[Last] dddd [at] LT\"}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0005",
+   "tz": "Asia/Kathmandu",
+   "now": 921130639306,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         920648839306
+        ]
+       }
+      },
+      "args": [
+       "vi"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"thứ sáu tuần trước lúc 21:32\"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0006",
+   "tz": "UTC",
+   "now": 1914564027000,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1915061487000
+        ]
+       }
+      },
+      "args": [
+       "pt-br"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "pt-br"
+        ]
+       }
+      },
+      "args": [
+       "nextWeek",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"domingo à 01:31\"}",
+   "{\"out\":\"nextWeek\"}",
+   "{\"out\":\"dddd [à] LT\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0007",
+   "tz": "Asia/Kathmandu",
+   "now": 1068985979202,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1069260599202
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "sameElse": "YYYY",
+        "lastDay": "[Yday]"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Wednesday at 10:34 PM\"}",
+   "{\"out\":\"nextWeek\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0008",
+   "tz": "Asia/Kathmandu",
+   "now": 1590350821469,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1590376621469
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "sameElse": "YYYY",
+        "lastDay": "[Yday]"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "en"
+        ]
+       }
+      },
+      "args": [
+       "lastWeek",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Today at 9:02 AM\"}",
+   "{\"out\":\"[Last] dddd [at] LT\"}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0009",
+   "tz": "Asia/Kathmandu",
+   "now": 1269500540822,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1269717260822
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Sunday at 12:59 AM\"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0010",
+   "tz": "Australia/Lord_Howe",
+   "now": -566690437738000,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -566690396458000
+        ]
+       }
+      },
+      "args": [
+       "cy"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "cy"
+        ]
+       }
+      },
+      "args": [
+       "nextWeek",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Heddiw am 19:35\"}",
+   "{\"out\":\"dddd [am] LT\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0011",
+   "tz": "Australia/Lord_Howe",
+   "now": 1550702890745,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1551351130745
+        ]
+       }
+      },
+      "args": [
+       "he"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"28/02/2019\"}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0012",
+   "tz": "Asia/Amman",
+   "now": 1487331007305,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         1486798147305
+        ]
+       }
+      },
+      "args": [
+       "es-us"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"el sábado pasado a las 7:29 AM\"}",
+   "{\"out\":\"sameElse\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0013",
+   "tz": "Asia/Kathmandu",
+   "now": 504909667475,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         504374467475
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          504650467475
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Last Wednesday at 4:01 PM\"}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0014",
+   "tz": "Australia/Lord_Howe",
+   "now": 1900546490185,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1899864950185
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"03/16/2030\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0015",
+   "tz": "Europe/London",
+   "now": 1563501350077,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1564197470077
+        ]
+       }
+      },
+      "args": [
+       "pt-br"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          1563674150077
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"sábado às 04:17\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0016",
+   "tz": "Europe/London",
+   "now": 934966774114,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         935559034114
+        ]
+       }
+      },
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       },
+       {
+        "sameDay": "[Same] LT",
+        "nextDay": "[Next] LT",
+        "lastWeek": "[Last] dddd",
+        "sameElse": "L"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"08/25/1999\"}",
+   "{\"out\":\"nextWeek\"}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0017",
+   "tz": "America/New_York",
+   "now": -525839164721088,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment.utc",
+        "args": [
+         -525839239901088
+        ]
+       }
+      },
+      "args": [
+       "uk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          -525839337521088
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "uk"
+        ]
+       }
+      },
+      "args": [
+       "sameDay",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Завтра о 16:28\"}",
+   "{\"out\":\"[Сьогодні о] LT\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0018",
+   "tz": "Asia/Kathmandu",
+   "now": 2099169562864,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         2098952902864
+        ]
+       }
+      },
+      "args": [
+       "x-pseudo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$x": {
+         "call": "moment",
+         "args": [
+          2098910362864
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "x-pseudo"
+        ]
+       }
+      },
+      "args": [
+       "sameDay",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"T~ódá~ý át 16:13\"}",
+   "{\"out\":\"[T~ódá~ý át] LT\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0019",
+   "tz": "America/Sao_Paulo",
+   "now": 1855309962679,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1855931442679
+        ]
+       }
+      },
+      "args": [
+       "ar-tn"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"23/10/2028\"}",
+   "{\"out\":\"sameElse\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0020",
+   "tz": "Australia/Lord_Howe",
+   "now": -407491436303596,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -407491366643596
+        ]
+       }
+      },
+      "args": [
+       "cs"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"zítra v 4:18\"}",
+   "{\"out\":\"sameDay\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0021",
+   "tz": "America/Sao_Paulo",
+   "now": 1069067026621,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1069030726621
+        ]
+       }
+      },
+      "args": [
+       "ar-ps"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "sameElse": "YYYY",
+        "lastDay": "[Yday]"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.calendarFormat",
+      "args": [
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "moment.localeData",
+        "args": [
+         "ar-ps"
+        ]
+       }
+      },
+      "args": [
+       "sameElse",
+       {
+        "$ref": "a"
+       },
+       {
+        "$x": {
+         "call": "moment",
+         "args": []
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Yday\"}",
+   "{\"out\":\"lastDay\"}",
+   "{\"out\":\"L\"}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0022",
+   "tz": "Europe/London",
+   "now": 1705721219014,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "locale",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1705908479014
+        ]
+       }
+      },
+      "args": [
+       "gu"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       null,
+       {
+        "sameDay": "[Same] LT",
+        "nextDay": "[Next] LT",
+        "lastWeek": "[Last] dddd",
+        "sameElse": "L"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"સોમવાર, સવાર ૭:૨૭ વાગ્યે\"}"
+  ]
+ }
+]

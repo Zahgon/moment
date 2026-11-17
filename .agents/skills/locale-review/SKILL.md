@@ -1,6 +1,6 @@
 ---
 name: locale-review
-description: Reviews Moment.js locale correction pull requests against the latest available Unicode CLDR data, authoritative language or cultural sources, implementation behavior, and locale tests. Use when reviewing changes to src/locale, src/test/locale, locale conventions, translations, calendars, or week rules.
+description: Reviews Moment.js locale correction pull requests against the latest available Unicode CLDR data, authoritative language or cultural sources, implementation behavior, and locale tests. Use when reviewing changes to locale/, cmd/momentcase/testdata/, locale conventions, translations, calendars, or week rules.
 license: MIT
 ---
 
@@ -52,17 +52,15 @@ Begin every review by updating the pull request branch against the latest
 After rebasing, list every file changed relative to `develop`. Locale correction
 pull requests may contain changes only under:
 
-- `src/locale/`
-- `src/test/locale/`
+- `locale/`
+- `cmd/momentcase/testdata/`
 
 Anything else is out of scope. List each out-of-scope file and the required
-remediation in your summary. In particular, `locale/`, `dist/locale/`, `dist/`,
-`min/`, the root `moment.js`, and other release artifacts are generated later
-and must not be included in the pull request.
+remediation in your summary.
 
 When valid source or test changes are accompanied by generated files, disregard
 the generated-file changes when assessing implementation details. Continue the
-review using only the changes under `src/locale/` and `src/test/locale/`, and
+review using only the changes under `locale/` and `cmd/momentcase/testdata/`, and
 state in your summary that every out-of-scope file must be removed.
 
 If the pull request contains only generated locale files, do not stop the
@@ -70,8 +68,8 @@ substantive review. Infer the intended locale correction from those files and
 assess it on its linguistic and behavioral merits. When necessary, reproduce
 the equivalent source change and tests only in the local review checkout to
 exercise the behavior. The pull request remains unmergeable until the
-contributor moves the change to `src/locale/`, supplies corresponding tests
-under `src/test/locale/`, and removes the generated files. Include all of these
+contributor moves the change to `locale/`, supplies corresponding tests
+under `cmd/momentcase/testdata/`, and removes the generated files. Include all of these
 requirements in your summary.
 
 ## 3. Establish The Review Target
@@ -79,7 +77,7 @@ requirements in your summary.
 1. Identify the pull request, base branch, affected locale, and every changed
    behavior. Obtain the complete diff and relevant discussion using the tools
    available in the current environment.
-2. Inspect `src/locale/<locale>.js`, `src/test/locale/<locale>.js`, and the code
+2. Inspect `locale/<locale>.go`, `the cases of `<locale>` under `cmd/momentcase/testdata/``, and the code
    paths that interpret the changed locale fields. Read enough surrounding code
    to understand whether a value affects formatting, strict or lenient parsing,
    relative time, calendars, ordinals, meridiems, eras, or week calculations.
@@ -279,7 +277,7 @@ Check as applicable:
   may require.
 - Unrelated output changes caused by shared helpers, broad regexes, or fallback
   behavior.
-- Consistency with the surrounding ES2015-compatible source style.
+- Consistency with the surrounding Go source style.
 
 Do not recommend broad cleanup or modernization as part of a locale correction.
 Moment 2.x is in maintenance mode, so prefer the smallest change that fixes the
@@ -287,7 +285,7 @@ verified defect while preserving established behavior.
 
 ## 9. Assess Tests And Run Checks
 
-The contributor must supply tests under `src/test/locale/` corresponding to the
+The contributor must supply tests under `cmd/momentcase/testdata/` corresponding to the
 locale correction. Missing or insufficient submitted tests are a blocking
 finding even when the proposed data is correct.
 
@@ -310,10 +308,10 @@ When dependencies and the checkout are available, run the submitted and any
 temporary focused locale tests:
 
 ```sh
-pnpm test -- --only=locale/<locale>
+go test ./cmd/momentcase/ -run 'TestRecordedCases/.*<locale>'
 ```
 
-Run `pnpm validate` before recommending approval when feasible. Do not claim a
+Run `gofmt -l .`, `go vet ./...` and `go test ./...` before recommending approval when feasible. Do not claim a
 check passed unless it was actually run. Report commands that failed, were
 skipped, or could not run because of the environment.
 
@@ -420,7 +418,7 @@ After the findings, include concise Evidence and Verification sections:
 - Distinguish tests submitted in the pull request from temporary tests created
   only during review.
 - Give only the pass or fail status of the focused locale test and
-  `pnpm validate`, when run. Summarize failures relevant to the pull request; do
+  the full `go test ./...` run, when run. Summarize failures relevant to the pull request; do
   not include raw test output, unrelated test results, or a list of every test.
 - State separately whether the pull request needs rebasing, linting, or
   formatting.

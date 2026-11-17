@@ -14,34 +14,26 @@ jobs:
 
     strategy:
       matrix:
-        node-version:
-          - lts/*
-          - lts/-1
-          - latest
+        go-version:
+          - '1.23'
+          - stable
 
     steps:
       - uses: actions/checkout@v7
 
-      - name: Use pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v7
+      - name: Use Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v6
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
+          go-version: ${{ matrix.go-version }}
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
 
-      - name: Lint
-        run: pnpm lint
+      - name: Vet
+        run: go vet ./...
 
       - name: Build
-        run: pnpm build
+        run: go build ./...
 
       - name: Test
-        run: pnpm test
-
-      - name: Test TypeScript declarations
-        run: pnpm test:typescript
+        run: go test ./...

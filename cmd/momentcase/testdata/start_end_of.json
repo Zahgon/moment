@@ -1,0 +1,2107 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0001",
+   "tz": "Australia/Lord_Howe",
+   "now": 1686415957424,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2015-04-05 01:32",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "ms"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "quarter"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "d"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1428157920000,660,false,\"en\"]}}",
+   "{\"out\":\"2015-04-05 01:32:00.000 +11:00\"}",
+   "{\"out\":{\"$moment\":[1435670999999,630,false,\"en\"]}}",
+   "{\"out\":\"2015-06-30 23:59:59.999 +10:30\"}",
+   "{\"out\":{\"$moment\":[1428152400000,660,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0002",
+   "tz": "UTC",
+   "now": 1364917208027,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -274677738778023
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "fa"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "week"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-274678214400000,{\"$num\":\"-0\"},false,\"fa\"]}}",
+   "{\"out\":{\"$moment\":[-274677738778023,{\"$num\":\"-0\"},false,\"fa\"]}}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0003",
+   "tz": "Pacific/Apia",
+   "now": 997356912748,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -44082613696108
+        ]
+       }
+      },
+      "args": [
+       "-11:00"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "ms"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "second"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-44082613696108,-660,true,\"ru\"]}}",
+   "{\"out\":{\"$moment\":[-44082613696001,-660,true,\"ru\"]}}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Amman",
+   "now": 1062652036633,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2009-10-30 00:27",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "w"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1257026399999,120,false,\"en\"]}}",
+   "{\"out\":\"2009-10-31 23:59:59.999 +02:00\"}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0005",
+   "tz": "Europe/London",
+   "now": 1390885075755,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         214965452616
+        ]
+       }
+      },
+      "args": [
+       60
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "d"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "D"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[214965452616,60,true,\"en\"]}}",
+   "{\"out\":\"1976-10-24 01:37:32.616 +01:00\"}",
+   "{\"out\":{\"$moment\":[215045999999,60,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[214965452616,60,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[215045999999,60,true,\"en\"]}}",
+   "{\"out\":\"1976-10-24 23:59:59.999 +01:00\"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0006",
+   "tz": "America/Sao_Paulo",
+   "now": 1270892122513,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -236826556220000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "W"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "decade"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "quarter"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-236826017612001,-186,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-236826556220000,-186,false,\"en\"]}}",
+   "{\"out\":\"-5535-04-06 18:23:12.000 -03:06\"}",
+   "{\"out\":{\"$moment\":[-236819192012001,-186,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0007",
+   "tz": "America/Sao_Paulo",
+   "now": 1690207695216,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -3467172386000
+        ]
+       }
+      },
+      "args": [
+       13
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "year"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-3439717200001,780,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0008",
+   "tz": "Australia/Lord_Howe",
+   "now": 1843847151724,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2028-04-02 01:47:00",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ar"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "second"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "h"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1838213220999,660,false,\"ar\"]}}",
+   "{\"out\":{\"$moment\":[1838210400000,660,false,\"ar\"]}}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0009",
+   "tz": "Europe/London",
+   "now": 862814827152,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1995-03-26 02:54",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "en-gb"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "decade"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "w"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[796182840000,60,false,\"en-gb\"]}}",
+   "{\"out\":{\"$moment\":[796258799999,60,false,\"en-gb\"]}}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0010",
+   "tz": "America/New_York",
+   "now": 1064788616456,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       1362894116000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "h"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "d"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "second"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "isoWeek"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1362891600000,0,true,\"en\"]}}",
+   "{\"out\":\"2013-03-10 05:00:00.000 +00:00\"}",
+   "{\"out\":{\"$moment\":[1362873600000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1362894116999,0,true,\"en\"]}}",
+   "{\"out\":\"2013-03-10 05:41:56.999 +00:00\"}",
+   "{\"out\":{\"$moment\":[1362355200000,0,true,\"en\"]}}",
+   "{\"out\":\"2013-03-04 00:00:00.000 +00:00\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0011",
+   "tz": "America/New_York",
+   "now": 1880604546327,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         562150615748
+        ]
+       }
+      },
+      "args": [
+       840
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "ms"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "date"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "W"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[562150615748,840,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[562150619999,840,true,\"en\"]}}",
+   "{\"out\":\"1987-10-25 22:56:59.999 +14:00\"}",
+   "{\"out\":{\"$moment\":[562068000000,840,true,\"en\"]}}",
+   "{\"out\":\"1987-10-25 00:00:00.000 +14:00\"}",
+   "{\"out\":{\"$moment\":[561549600000,840,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0012",
+   "tz": "America/New_York",
+   "now": 1474351407814,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2003-10-26 00:08:00",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "day"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "ms"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1067230799999,-300,false,\"en\"]}}",
+   "{\"out\":\"2003-10-26 23:59:59.999 -05:00\"}",
+   "{\"out\":{\"$moment\":[1067141280000,-240,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0013",
+   "tz": "Australia/Lord_Howe",
+   "now": 1188405622978,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -63457367365000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "w"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-63457209380001,636,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0014",
+   "tz": "Australia/Lord_Howe",
+   "now": 1702693557321,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2003-10-26 02:07",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "w"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "day"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1067088600000,630,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1067096220000,660,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1067173199999,660,false,\"en\"]}}",
+   "{\"out\":\"2003-10-26 23:59:59.999 +11:00\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0016",
+   "tz": "Asia/Amman",
+   "now": 969624855891,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1994-09-15 23:56",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "fa"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "week"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "D"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[779662619999,180,false,\"fa\"]}}",
+   "{\"out\":\"۱۹۹۴-۰۹-۱۵ ۲۳:۵۶:۵۹.۹۹۹ +۰۳:۰۰\"}",
+   "{\"out\":{\"$moment\":[779752799999,120,false,\"fa\"]}}",
+   "{\"out\":\"۱۹۹۴-۰۹-۱۶ ۲۳:۵۹:۵۹.۹۹۹ +۰۲:۰۰\"}",
+   "{\"out\":{\"$moment\":[779576400000,180,false,\"fa\"]}}",
+   "{\"out\":\"۱۹۹۴-۰۹-۱۵ ۰۰:۰۰:۰۰.۰۰۰ +۰۳:۰۰\"}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0017",
+   "tz": "America/New_York",
+   "now": 1917478430568,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2011-03-13 02:35:00",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "fa"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "d"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "second"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "h"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "hour"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1300075199999,-240,false,\"fa\"]}}",
+   "{\"out\":\"۲۰۱۱-۰۳-۱۳ ۲۳:۵۹:۵۹.۹۹۹ -۰۴:۰۰\"}",
+   "{\"out\":{\"$moment\":[1300001700999,-240,false,\"fa\"]}}",
+   "{\"out\":{\"$moment\":[1300003199999,-240,false,\"fa\"]}}",
+   "{\"out\":{\"$moment\":[1300003199999,-240,false,\"fa\"]}}",
+   "{\"out\":\"۲۰۱۱-۰۳-۱۳ ۰۳:۵۹:۵۹.۹۹۹ -۰۴:۰۰\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0018",
+   "tz": "America/New_York",
+   "now": 1583030348100,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       [
+        -13695,
+        2,
+        13
+       ]
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "y"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "month"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "D"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-494308137600001,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-494331897600001,0,true,\"en\"]}}",
+   "{\"out\":\"-13695-03-31 23:59:59.999 +00:00\"}",
+   "{\"out\":{\"$moment\":[-494333539200000,0,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0019",
+   "tz": "America/New_York",
+   "now": 925707338858,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -102538603842000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "he"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "date"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "Q"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "minute"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-102538638238000,-296,false,\"he\"]}}",
+   "{\"out\":{\"$moment\":[-102544427038000,-296,false,\"he\"]}}",
+   "{\"out\":\"-1280-07-01 00:00:00.000 -04:56\"}",
+   "{\"out\":{\"$moment\":[-102538603800001,-296,false,\"he\"]}}",
+   "{\"out\":\"-1280-09-06 09:33:57.999 -04:56\"}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0020",
+   "tz": "America/New_York",
+   "now": 827614372877,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       152095614000
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "endOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "h"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[152096399999,-300,false,\"en\"]}}",
+   "{\"out\":\"1974-10-27 03:59:59.999 -05:00\"}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0021",
+   "tz": "America/Sao_Paulo",
+   "now": 1174620029803,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -62198755200000
+        ]
+       }
+      },
+      "args": [
+       60
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "week"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62199190800000,60,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0022",
+   "tz": "Pacific/Apia",
+   "now": 1222411557571,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1491063312000
+        ]
+       }
+      },
+      "args": [
+       "+02:30"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "quarter"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$ref": "b"
+      },
+      "args": [
+       "YYYY-MM-DD HH:mm:ss.SSS Z"
+      ]
+     }
+    },
+    {
+     "let": "b",
+     "x": {
+      "call": "startOf",
+      "on": {
+       "$x": {
+        "call": "clone",
+        "on": {
+         "$ref": "a"
+        },
+        "args": []
+       }
+      },
+      "args": [
+       "ms"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "b"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1490995800000,150,true,\"en\"]}}",
+   "{\"out\":\"2017-04-01 00:00:00.000 +02:30\"}",
+   "{\"out\":{\"$moment\":[1491063312000,150,true,\"en\"]}}"
+  ]
+ }
+]

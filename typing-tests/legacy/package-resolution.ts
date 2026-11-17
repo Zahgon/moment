@@ -1,3 +1,0 @@
-import moment = require('../../');
-
-moment();

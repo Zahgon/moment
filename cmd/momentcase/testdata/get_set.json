@@ -1,0 +1,1716 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0001",
+   "tz": "Asia/Kathmandu",
+   "now": 1421044082166,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -281085266371000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "days",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "lundi"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "month",
+       31
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-281085352771000,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-281027464771000,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-281027464771000,341,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0002",
+   "tz": "UTC",
+   "now": 1690618604416,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -607804543704000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "minute",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       30
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "quarter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-607804543764000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":2}",
+   "{\"out\":{\"$moment\":[-607804543764000,{\"$num\":\"-0\"},false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0003",
+   "tz": "Asia/Amman",
+   "now": 1298565172911,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "2006-03-30T23:58:12-12:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hours",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "0x10"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "second",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "lundi"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1143781092000,-720,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1143781092000,-720,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1143781092000,-720,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0004",
+   "tz": "Asia/Amman",
+   "now": 791344663374,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "utcOffset",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -448207746659459
+        ]
+       }
+      },
+      "args": [
+       -720
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "weeks",
+       "February"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "year",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       0
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "Q": "5",
+        "M": " 7 ",
+        "year": 0,
+        "y": 1000
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-448207746659459,-720,true,\"ru\"]}}",
+   "{\"out\":{\"$moment\":[-62139973859459,-720,true,\"ru\"]}}",
+   "{\"out\":{\"$moment\":[-30575116259459,-720,true,\"ru\"]}}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0005",
+   "tz": "Pacific/Apia",
+   "now": 2113093154442,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -153677359319000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "year",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "isoWeek",
+       "February"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "months",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "February"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62130597719000,753,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62130597719000,753,false,\"en\"]}}",
+   "{\"deprecation\":[null,\"months accessor is deprecated. Use month instead\"]}",
+   "{\"out\":{\"$moment\":[-62130597719000,753,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62130597719000,753,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0006",
+   "tz": "Australia/Lord_Howe",
+   "now": 1350072622592,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1996-03-31 02:38:00",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "y": 59
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":31}",
+   "{\"out\":{\"$moment\":[-60297638300000,636,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0008",
+   "tz": "Europe/London",
+   "now": 878589059221,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "1991-10-27 02:00:00",
+       "YYYY-MM-DD HH:mm:ss"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "quarter",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$num": "-0"
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "hours": 60,
+        "M": 1,
+        "y": 1000
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "get",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "hour",
+       2016
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "days",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "0x10"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[656989200000,60,false,\"en\"]}}",
+   "{\"out\":12}",
+   "{\"out\":{\"$moment\":[-30605601525000,-1,false,\"en\"]}}",
+   "{\"out\":23}",
+   "{\"out\":{\"$moment\":[-30605601525000,-1,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0009",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0009",
+   "tz": "UTC",
+   "now": 1809458518900,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isLeapYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "quarters",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       2.7
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62167651200000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":false}",
+   "{\"out\":{\"$moment\":[-62178192000000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62178192000000,{\"$num\":\"-0\"},false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0010",
+   "tz": "Pacific/Apia",
+   "now": 1443932011636,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "0459-04-26T08:06:03+14:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       ""
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "M": 60,
+        "h": 1000
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "get",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "year",
+       {
+        "$num": "-0"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "dates",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$num": "NaN"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-47672517237000,840,true,\"en\"]}}",
+   "{\"out\":464}",
+   "{\"deprecation\":[null,\"dates accessor is deprecated. Use date instead.\"]}",
+   "{\"out\":{\"$moment\":[-47518955637000,840,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-47518955637000,840,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0011",
+   "tz": "Asia/Kathmandu",
+   "now": 881992368689,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -2552351135000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ar"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "days",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "5"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "millisecond",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Mo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "months",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "lundi"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-2552178335000,341,false,\"ar\"]}}",
+   "{\"out\":{\"$moment\":[-2552178335000,341,false,\"ar\"]}}",
+   "{\"deprecation\":[null,\"months accessor is deprecated. Use month instead\"]}",
+   "{\"out\":{\"$moment\":[-2552178335000,341,false,\"ar\"]}}",
+   "{\"out\":{\"$moment\":[-2552178335000,341,false,\"ar\"]}}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0012",
+   "tz": "UTC",
+   "now": 898890166512,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "1884-07-05T05:48:27+00:00"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "date": "",
+        "s": 13,
+        "minute": 0,
+        "day": 12
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "s",
+       0
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       366
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "dates",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$undefined": true
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-2697303600000,0,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-2666113200000,0,true,\"en\"]}}",
+   "{\"deprecation\":[null,\"dates accessor is deprecated. Use date instead.\"]}",
+   "{\"out\":7}",
+   "{\"out\":{\"$moment\":[-2666113200000,0,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0013",
+   "tz": "America/New_York",
+   "now": 34785962785,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -3140,
+        11
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toObject",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "year",
+       ""
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"years\":-3140,\"months\":11,\"date\":1,\"hours\":0,\"minutes\":0,\"seconds\":0,\"milliseconds\":0}}",
+   "{\"out\":{\"$moment\":[-62138257438000,-296,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62138257438000,-296,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0014",
+   "tz": "America/New_York",
+   "now": 311168147443,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.utc",
+      "args": [
+       -618856698810963
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "fr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       366
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "M",
+       " 7 "
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "year",
+       2016
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "years",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -0.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toDate",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-618826718010963,0,true,\"fr\"]}}",
+   "{\"out\":{\"$moment\":[-618826718010963,0,true,\"fr\"]}}",
+   "{\"out\":{\"$moment\":[1456766789037,0,true,\"fr\"]}}",
+   "{\"deprecation\":[null,\"years accessor is deprecated. Use year instead\"]}",
+   "{\"out\":{\"$moment\":[-62162145210963,0,true,\"fr\"]}}",
+   "{\"out\":{\"$date\":-62162145210963}}",
+   "{\"out\":{\"$moment\":[-62162145210963,0,true,\"fr\"]}}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0015",
+   "tz": "Europe/London",
+   "now": 920059369299,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -113668203145000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "weekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       0
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "weeks",
+       -1
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "days",
+       30
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-113668203145000,-1,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-113669412745000,-1,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-113666820745000,-1,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-113666820745000,-1,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0016",
+   "tz": "Pacific/Apia",
+   "now": 1780656425106,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        1896,
+        1
+       ]
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "de"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "get",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "y",
+       "Feb"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "second",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       31
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hours",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -0.5
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":1896}",
+   "{\"out\":{\"$moment\":[-2332499553000,-686,false,\"de\"]}}",
+   "{\"out\":{\"$moment\":[-2332499553000,-686,false,\"de\"]}}",
+   "{\"out\":{\"$moment\":[-2332499553000,-686,false,\"de\"]}}"
+  ]
+ },
+ {
+  "id": "case-0017",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0017",
+   "tz": "Asia/Kathmandu",
+   "now": 1884086919888,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       -494617394535698
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "minute",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -0.5
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "M": 13
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "weeks",
+       "5"
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-494617398075698,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-494589490875698,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-494589490875698,341,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0018",
+   "tz": "UTC",
+   "now": 614044546895,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "minute",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "dayOfYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       366
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":1}",
+   "{\"out\":{\"$moment\":[-62167159200000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62135623200000,{\"$num\":\"-0\"},false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-62135623200000,{\"$num\":\"-0\"},false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0019",
+   "tz": "Australia/Lord_Howe",
+   "now": 864496554656,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        2000
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "isoWeekday",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "Feb"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "quarters",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       59
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[946731600000,660,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1404221400000,630,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[1404221400000,630,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0020",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0020",
+   "tz": "America/Sao_Paulo",
+   "now": 1656592190488,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "0916-12-02T20:31:05+01:00"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "get",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "m",
+       "Feb"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "toDate",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "days",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "abc"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "quarters",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -1
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":31}",
+   "{\"out\":{\"$date\":-33231961735000}}",
+   "{\"out\":{\"$moment\":[-33232220935000,60,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-33271792135000,60,true,\"en\"]}}",
+   "{\"out\":29}",
+   "{\"out\":{\"$moment\":[-33271792135000,60,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0021",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0021",
+   "tz": "America/New_York",
+   "now": 825164047785,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "1503-09-11T06:44:14-08:00"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ar"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "dayOfYear": 59,
+        "day": "5"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "dayOfYear",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "February"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "get",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "d",
+       true
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hour",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -1
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-14732183746000,-480,true,\"ar\"]}}",
+   "{\"out\":5}",
+   "{\"out\":{\"$moment\":[-14732208946000,-480,true,\"ar\"]}}",
+   "{\"out\":{\"$moment\":[-14732208946000,-480,true,\"ar\"]}}"
+  ]
+ },
+ {
+  "id": "case-0022",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0022",
+   "tz": "America/Sao_Paulo",
+   "now": 1272360415532,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "2002-11-03 00:07",
+       "YYYY-MM-DD HH:mm"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "month",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       ""
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "month",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1000
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "unix",
+      "on": {
+       "$ref": "a"
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[1036292820000,-120,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[3639701220000,-180,false,\"en\"]}}",
+   "{\"out\":3639701220}",
+   "{\"out\":{\"$moment\":[3639701220000,-180,false,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0023",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0023",
+   "tz": "Pacific/Apia",
+   "now": 1672366744419,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       "0000-01-01T00:00:00.000Z"
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "locale",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "ru"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "5"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       "days",
+       {
+        "$num": "-0"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-62166873600000,753,false,\"ru\"]}}",
+   "{\"out\":{\"$moment\":[-62167132800000,753,false,\"ru\"]}}",
+   "{\"out\":{\"$moment\":[-62167132800000,753,false,\"ru\"]}}"
+  ]
+ },
+ {
+  "id": "case-0024",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0024",
+   "tz": "America/New_York",
+   "now": 1573718829484,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment.parseZone",
+      "args": [
+       "1981-04-26T04:47:13+05:30"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "date",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       366
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "hours": "",
+        "weekday": 60,
+        "date": 0
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "second",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       -1
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "D": 13,
+        "hours": 60
+       }
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "D": 0,
+        "day": 1000
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[386464633000,330,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[391288619000,330,true,\"en\"]}}",
+   "{\"out\":{\"$moment\":[474967019000,330,true,\"en\"]}}"
+  ]
+ },
+ {
+  "id": "case-0025",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0025",
+   "tz": "Asia/Kathmandu",
+   "now": 680353248163,
+   "steps": [
+    {
+     "let": "a",
+     "x": {
+      "call": "moment",
+      "args": [
+       [
+        -8271,
+        4
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "day",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "$num": "-0"
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "hours",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       1000
+      ]
+     }
+    },
+    {
+     "do": {
+      "call": "set",
+      "on": {
+       "$ref": "a"
+      },
+      "args": [
+       {
+        "w": 12
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "$ref": "a"
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$moment\":[-323164359676000,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-323160759676000,341,false,\"en\"]}}",
+   "{\"out\":{\"$moment\":[-323168017276000,341,false,\"en\"]}}"
+  ]
+ }
+]

@@ -37,7 +37,7 @@ body:
     attributes:
       label: Minimal reproduction
       description: Provide the smallest complete example that reproduces the problem.
-      render: javascript
+      render: go
     validations:
       required: true
 
@@ -75,18 +75,18 @@ body:
   - type: input
     id: runtime
     attributes:
-      label: Runtime
-      description: Include the Node.js or browser name and version.
-      placeholder: Node.js 22.22.2 or Chrome 140
+      label: Go version
+      description: Include the output of `go version`.
+      placeholder: go version go1.26.11 linux/amd64
     validations:
       required: true
 
   - type: input
     id: loading
     attributes:
-      label: Loading method
-      description: Describe how Moment.js is imported or loaded if it is not evident from the code sample.
-      placeholder: npm CommonJS, ESM bundle, or CDN script
+      label: Packages
+      description: Name the packages you import if it is not evident from the code sample.
+      placeholder: github.com/moment/moment and github.com/moment/moment/locale
 
   - type: input
     id: locale

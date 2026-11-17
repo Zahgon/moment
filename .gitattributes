@@ -1,3 +1,4 @@
-# we don't have non-text files, don't take chances with git's text=auto
+# text by default, so that line endings never vary; the compressed test data is binary
 * text
 .githooks/* text eol=lf
+*.gz binary

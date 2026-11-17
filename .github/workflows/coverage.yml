@@ -15,15 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Use pnpm and Node.js
-        uses: pnpm/setup@v2
+      - name: Use Go
+        uses: actions/setup-go@v6
         with:
-          cache: true
+          go-version: stable
 
       - name: Run coverage
-        run: pnpm test:coverage
+        run: go test -coverprofile=coverage.txt ./...
 
       - name: Report coverage to Coveralls
         uses: coverallsapp/github-action@v2
         with:
-          file: coverage/lcov.info
+          file: coverage.txt
+          format: golang

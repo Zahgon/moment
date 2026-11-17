@@ -1,0 +1,1211 @@
+[
+ {
+  "id": "case-0001",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0001",
+   "tz": "Australia/Lord_Howe",
+   "now": 483197539960,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.updateLocale",
+      "args": [
+       "de",
+       {
+        "calendar": {
+         "sameDay": "[Aujourd] LT"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "zh"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":[\"en\"]}",
+   "{\"out\":{\"$locale\":\"de\"}}",
+   "{\"out\":\"de\"}",
+   "{\"out\":[\"en\",\"de\",\"zh\"]}",
+   "{\"out\":\"de\"}"
+  ]
+ },
+ {
+  "id": "case-0002",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0002",
+   "tz": "America/New_York",
+   "now": 1302550105907,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "en"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$locale\":\"en\"}}",
+   "{\"out\":\"en\"}",
+   "{\"out\":[\"en\"]}",
+   "{\"out\":\"en\"}"
+  ]
+ },
+ {
+  "id": "case-0003",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0003",
+   "tz": "UTC",
+   "now": 1873232011125,
+   "steps": [
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -555177240246375
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "İ"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "zz-ZZ"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.langData",
+      "args": [
+       "x-pseudo"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Friday, February 18, -15623 11:55 AM 18th\"}",
+   "{\"out\":\"en\"}",
+   "{\"out\":\"en\"}",
+   "{\"deprecation\":[null,\"moment.langData is deprecated. Use moment.localeData instead.\"]}",
+   "{\"out\":{\"$locale\":\"x-pseudo\"}}",
+   "{\"out\":[\"en\",\"zz-zz\",\"zz\",\"x-pseudo\"]}",
+   "{\"out\":\"en\"}"
+  ]
+ },
+ {
+  "id": "case-0004",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0004",
+   "tz": "Australia/Lord_Howe",
+   "now": 1198545379109,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       "12"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "locale",
+        "on": {
+         "$x": {
+          "call": "moment",
+          "args": [
+           -275823616536595
+          ]
+         }
+        },
+        "args": [
+         null
+        ]
+       }
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$locale\":\"en\"}}",
+   "{\"out\":[\"12\",\"en\"]}",
+   "{\"out\":\"07/01/-6771\"}",
+   "{\"out\":[\"12\",\"en\"]}",
+   "{\"out\":\"en\"}"
+  ]
+ },
+ {
+  "id": "case-0005",
+  "tz": "Asia/Amman",
+  "case": {
+   "id": "case-0005",
+   "tz": "Asia/Amman",
+   "now": 1532686517615,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       "oc-lnc"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.langData",
+      "args": [
+       "xx-yy"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -9428287780345
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         765145052439
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "pt-BR"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$locale\":\"oc-lnc\"}}",
+   "{\"deprecation\":[null,\"moment.langData is deprecated. Use moment.localeData instead.\"]}",
+   "{\"out\":{\"$locale\":\"en\"}}",
+   "{\"out\":\"Wednesday, March 25, 1671 9:34 AM 25th\"}",
+   "{\"out\":[\"en\",\"oc-lnc\",\"xx-yy\",\"xx\"]}",
+   "{\"out\":\"Thursday, March 31, 1994 10:17 PM 31st\"}",
+   "{\"out\":\"pt-br\"}",
+   "{\"out\":[\"en\",\"oc-lnc\",\"xx-yy\",\"xx\",\"pt-br\"]}",
+   "{\"out\":\"pt-br\"}"
+  ]
+ },
+ {
+  "id": "case-0006",
+  "tz": "America/New_York",
+  "case": {
+   "id": "case-0006",
+   "tz": "America/New_York",
+   "now": 451837507641,
+   "steps": [
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$x": {
+        "call": "locale",
+        "on": {
+         "$x": {
+          "call": "moment",
+          "args": [
+           -425786692194212
+          ]
+         }
+        },
+        "args": [
+         "fr_CA"
+        ]
+       }
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -2388896324000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       [
+        "xx",
+        "de"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       [
+        "en-au",
+        "en-gb"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"il y a 13507 ans\"}",
+   "{\"out\":\"Thursday, April 19, 1894 12:41 PM 19th\"}",
+   "{\"out\":\"de\"}",
+   "{\"out\":\"en-au\"}",
+   "{\"out\":[\"en\",\"fr-ca\",\"xx\",\"de\",\"en-au\"]}",
+   "{\"out\":\"en-au\"}"
+  ]
+ },
+ {
+  "id": "case-0007",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0007",
+   "tz": "UTC",
+   "now": 1230918068672,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.defineLocale",
+      "args": [
+       "en-foo",
+       null
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.langData",
+      "args": [
+       "zh"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":null}",
+   "{\"deprecation\":[null,\"moment.langData is deprecated. Use moment.localeData instead.\"]}",
+   "{\"out\":{\"$locale\":\"en\"}}",
+   "{\"out\":[\"en\",\"zh\"]}",
+   "{\"out\":\"en\"}"
+  ]
+ },
+ {
+  "id": "case-0008",
+  "tz": "America/Sao_Paulo",
+  "case": {
+   "id": "case-0008",
+   "tz": "America/Sao_Paulo",
+   "now": 997450365665,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.lang",
+      "args": [
+       "de-AT-x"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -124108802934000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"deprecation\":[null,\"moment.lang is deprecated. Use moment.locale instead.\"]}",
+   "{\"out\":\"de-at\"}",
+   "{\"out\":\"Montag, 23. Februar -1963 09:24 23.\"}",
+   "{\"out\":[\"en\",\"de-at-x\",\"de-at\"]}",
+   "{\"out\":\"de-at\"}"
+  ]
+ },
+ {
+  "id": "case-0010",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0010",
+   "tz": "UTC",
+   "now": 1518362577105,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       "ku-kmr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "zh"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       ""
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.updateLocale",
+      "args": [
+       "fr",
+       {
+        "months": [
+         "a",
+         "b",
+         "c",
+         "d",
+         "e",
+         "f",
+         "g",
+         "h",
+         "i",
+         "j",
+         "k",
+         "l"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -1559560046000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       [
+        "en-au",
+        "en-gb"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$locale\":\"ku-kmr\"}}",
+   "{\"out\":\"en\"}",
+   "{\"out\":{\"$locale\":\"en\"}}",
+   "{\"out\":{\"$locale\":\"fr\"}}",
+   "{\"out\":\"samedi 31 g 1920 12:52 31\"}",
+   "{\"out\":\"en-au\"}",
+   "{\"out\":[\"en\",\"ku-kmr\",\"zh\",\"fr\",\"en-au\"]}",
+   "{\"out\":\"en-au\"}"
+  ]
+ },
+ {
+  "id": "case-0011",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0011",
+   "tz": "Australia/Lord_Howe",
+   "now": 1092325967171,
+   "steps": [
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -56102997066000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         814897537000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Friday, March 2, 0192 4:45 AM 2nd\"}",
+   "{\"out\":\"Sunday, October 29, 1995 3:25 AM 29th\"}",
+   "{\"out\":[\"en\"]}",
+   "{\"out\":\"en\"}"
+  ]
+ },
+ {
+  "id": "case-0012",
+  "tz": "Asia/Kathmandu",
+  "case": {
+   "id": "case-0012",
+   "tz": "Asia/Kathmandu",
+   "now": 1632232229800,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "pt-BR"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       "pt-BR"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "locale",
+        "on": {
+         "$x": {
+          "call": "moment",
+          "args": [
+           -627906709380000
+          ]
+         }
+        },
+        "args": [
+         "12"
+        ]
+       }
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"pt-br\"}",
+   "{\"out\":{\"$locale\":\"pt-br\"}}",
+   "{\"out\":\"05/06/-17928\"}",
+   "{\"out\":[\"12\",\"en\",\"pt-br\"]}",
+   "{\"out\":\"pt-br\"}"
+  ]
+ },
+ {
+  "id": "case-0013",
+  "tz": "Australia/Lord_Howe",
+  "case": {
+   "id": "case-0013",
+   "tz": "Australia/Lord_Howe",
+   "now": 1241634246024,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       [
+        "xx",
+        "de"
+       ]
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         499192378648
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"de\"}",
+   "{\"out\":\"Sonntag, 27. Oktober 1985 03:32 27.\"}",
+   "{\"out\":[\"en\",\"xx\",\"de\"]}",
+   "{\"out\":\"de\"}"
+  ]
+ },
+ {
+  "id": "case-0014",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0014",
+   "tz": "Pacific/Apia",
+   "now": 1775941102057,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.updateLocale",
+      "args": [
+       "en",
+       {
+        "calendar": {
+         "sameDay": "[Aujourd] LT"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$x": {
+        "call": "locale",
+        "on": {
+         "$x": {
+          "call": "moment",
+          "args": [
+           -129074478195952
+          ]
+         }
+        },
+        "args": [
+         "pt-BR"
+        ]
+       }
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.defineLocale",
+      "args": [
+       "en-foo",
+       null
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "EN-gb"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "FR"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$locale\":\"en\"}}",
+   "{\"out\":\"há 4146 anos\"}",
+   "{\"out\":null}",
+   "{\"out\":\"en-gb\"}",
+   "{\"out\":\"fr\"}",
+   "{\"out\":[\"en\",\"pt-br\",\"en-gb\",\"fr\"]}",
+   "{\"out\":\"fr\"}"
+  ]
+ },
+ {
+  "id": "case-0015",
+  "tz": "UTC",
+  "case": {
+   "id": "case-0015",
+   "tz": "UTC",
+   "now": 1062337477398,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "pt-BR"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "calendar",
+      "on": {
+       "$x": {
+        "call": "locale",
+        "on": {
+         "$x": {
+          "call": "moment",
+          "args": [
+           -2877956523000
+          ]
+         }
+        },
+        "args": [
+         "__proto__"
+        ]
+       }
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "ku-kmr"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "constructor"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"pt-br\"}",
+   "{\"out\":\"20/10/1878\"}",
+   "{\"out\":\"ku-kmr\"}",
+   "{\"out\":\"ku-kmr\"}",
+   "{\"out\":[\"en\",\"pt-br\",\"ku-kmr\",\"constructor\"]}",
+   "{\"out\":\"ku-kmr\"}"
+  ]
+ },
+ {
+  "id": "case-0016",
+  "tz": "Pacific/Apia",
+  "case": {
+   "id": "case-0016",
+   "tz": "Pacific/Apia",
+   "now": 814407390860,
+   "steps": [
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -335418888587000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         1428155201000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Saturday, December 31, -8660 11:03 AM 31st\"}",
+   "{\"out\":\"Sunday, April 5, 2015 3:46 AM 5th\"}",
+   "{\"out\":[\"en\"]}",
+   "{\"out\":\"en\"}"
+  ]
+ },
+ {
+  "id": "case-0018",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0018",
+   "tz": "Europe/London",
+   "now": 1286623540101,
+   "steps": [
+    {
+     "out": {
+      "call": "moment.defineLocale",
+      "args": [
+       "fr",
+       {
+        "relativeTime": {
+         "future": "dans %s",
+         "s": "qq sec"
+        },
+        "week": {
+         "dow": 1,
+         "doy": 4
+        }
+       }
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "fromNow",
+      "on": {
+       "$x": {
+        "call": "locale",
+        "on": {
+         "$x": {
+          "call": "moment",
+          "args": [
+           1729989702716
+          ]
+         }
+        },
+        "args": [
+         "12"
+        ]
+       }
+      },
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.langData",
+      "args": [
+       "oc"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":{\"$locale\":\"fr\"}}",
+   "{\"out\":\"dans 14 years\"}",
+   "{\"deprecation\":[null,\"moment.langData is deprecated. Use moment.localeData instead.\"]}",
+   "{\"out\":{\"$locale\":\"fr\"}}",
+   "{\"out\":[\"12\",\"en\",\"fr\",\"oc\"]}",
+   "{\"out\":\"fr\"}"
+  ]
+ },
+ {
+  "id": "case-0019",
+  "tz": "Europe/London",
+  "case": {
+   "id": "case-0019",
+   "tz": "Europe/London",
+   "now": 1728165415935,
+   "steps": [
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -451986392935000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": [
+       "zh-hk"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.localeData",
+      "args": [
+       "tzm-latn-ma"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "format",
+      "on": {
+       "$x": {
+        "call": "moment",
+        "args": [
+         -2935414603000
+        ]
+       }
+      },
+      "args": [
+       "LLLL Do"
+      ]
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locales",
+      "args": []
+     }
+    },
+    {
+     "out": {
+      "call": "moment.locale",
+      "args": []
+     }
+    }
+   ]
+  },
+  "expect": [
+   "{\"out\":\"Thursday, February 14, -12353 12:09 AM 14th\"}",
+   "{\"out\":\"zh-hk\"}",
+   "{\"out\":{\"$locale\":\"tzm-latn\"}}",
+   "{\"out\":\"1876年12月24日星期日 07:03 24日\"}",
+   "{\"out\":[\"en\",\"zh-hk\",\"tzm-latn-ma\",\"tzm-latn\"]}",
+   "{\"out\":\"zh-hk\"}"
+  ]
+ }
+]

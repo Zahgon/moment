@@ -7,7 +7,13 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = space
 
-[*.{js,json}]
+[*.go]
+indent_style = tab
+
+[go.mod]
+indent_style = tab
+
+[*.json]
 indent_size = 4
 
 [*.{yml}]
